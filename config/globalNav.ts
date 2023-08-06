@@ -5,6 +5,10 @@ export const globalNavConfig: GlobalNavConfig = {
     {
       title: "Blog",
       href: "/posts",
+    },
+    {
+      title: "Fav",
+      href: "/fav",
     }
   ],
 }

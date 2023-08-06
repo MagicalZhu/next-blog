@@ -31,7 +31,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated"
-  ],
+    ".contentlayer/generated",
+    "lib/mdx-plugin/admonition/index.js"  ],
   "exclude": ["node_modules"]
 }

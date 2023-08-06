@@ -2,6 +2,8 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "./lib/mdx-plugin/highlight/index"
 import rehypeSlug from "rehype-slug"
+import remarkDirective  from'remark-directive'
+import admonition  from'./lib/mdx-plugin/admonition/index.js'
 import remarkGfm from "remark-gfm"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
@@ -31,6 +33,7 @@ export const Page = defineDocumentType(() => ({
   },
   computedFields,
 }))
+
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -70,7 +73,11 @@ export default makeSource({
   contentDirPath: "./content",
   documentTypes: [Post, Page],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [
+      remarkGfm,
+      [remarkDirective],
+      [admonition]
+    ],
     rehypePlugins: [
       rehypeSlug,
       [
