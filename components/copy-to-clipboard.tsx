@@ -44,7 +44,7 @@ export const CopyToClipboard = ({
   const IconToUse = isCopied ? Icons.check : Icons.copy
 
   return (
-    <Button onClick={handleClick} title="Copy code" tabIndex={0} {...props}>
+    <Button onClick={handleClick} title="Copy code" tabIndex={0} {...props} className='h-8 w-8'>
       <IconToUse className="text-gray-400" />
     </Button>
   )

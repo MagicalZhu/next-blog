@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "concurrently \"contentlayer dev\" \"next dev -p 4000\"",
     "build": "contentlayer build && next build",
-    "turbo": "next dev --turbo --show-all",
-    "start": "next start",
+    "turbo": "next dev -p 4000 --turbo --show-all",
+    "start": "next start -p 4000",
     "lint": "next lint",
     "preview": "next build && next start"
   },
@@ -46,6 +46,7 @@
     "@radix-ui/react-tooltip": "^1.0.5",
     "@t3-oss/env-nextjs": "^0.2.2",
     "@tanstack/react-table": "^8.9.3",
+    "@types/hast": "^3.0.1",
     "@typescript-eslint/parser": "^5.59.0",
     "@vercel/analytics": "^1.0.0",
     "@vercel/og": "^0.0.21",
@@ -67,6 +68,7 @@
     "postmark": "^3.0.15",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-day-picker": "^8.8.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "rehype-parse": "^8.0.4",

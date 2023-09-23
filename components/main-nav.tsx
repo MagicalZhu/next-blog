@@ -13,20 +13,21 @@ import { MobileNav } from "@/components/mobile-nav"
 interface MainNavProps {
   items?: MainNavItem[]
   children?: React.ReactNode
+  className?: string
 }
 
-export function MainNav({ items, children }: MainNavProps) {
+export function MainNav({ items, children, className }: MainNavProps) {
   const segment = useSelectedLayoutSegment()
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="hidden items-center space-x-2 md:flex">
+      {/* <Link href="/" className="hidden items-left space-x-2 md:flex">
         <Icons.logo />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
-      </Link>
+      </Link> */}
       {items?.length ? (
         <nav className="hidden gap-6 md:flex float-right">
           {items?.map((item, index) => (
@@ -38,7 +39,8 @@ export function MainNav({ items, children }: MainNavProps) {
                 item.href.startsWith(`/${segment}`)
                   ? "text-foreground"
                   : "text-foreground/60",
-                item.disabled && "cursor-not-allowed opacity-80"
+                item.disabled && "cursor-not-allowed opacity-80",
+                className
               )}
             >
               {item.title}

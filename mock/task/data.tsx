@@ -4,7 +4,6 @@ import {
   ArrowUpIcon,
   CheckCircle2Icon,
   CircleIcon,
-  CrossIcon,
   ShieldQuestion,
   WatchIcon,
 } from "lucide-react"

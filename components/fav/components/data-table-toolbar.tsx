@@ -1,6 +1,6 @@
 "use client"
 
-import { CrossIcon } from "lucide-react"
+import { RotateCwIcon } from "lucide-react"
 import { Table } from "@tanstack/react-table"
 
 import { Button } from "@/components/ui/button"
@@ -23,17 +23,17 @@ export function DataTableToolbar<TData>({
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center space-x-2">
         <Input
-          placeholder="Filter tasks..."
+          placeholder="Search Content..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("title")?.setFilterValue(event.target.value)
           }
-          className="h-8 w-[150px] lg:w-[250px]"
+          className="h-8 w-[150px] lg:w-[250px] mr-2"
         />
         {table.getColumn("status") && (
           <DataTableFacetedFilter
             column={table.getColumn("status")}
-            title="Status"
+            title="说明"
             options={statuses}
           />
         )}
@@ -50,8 +50,8 @@ export function DataTableToolbar<TData>({
             onClick={() => table.resetColumnFilters()}
             className="h-8 px-2 lg:px-3"
           >
-            Reset
-            <CrossIcon className="ml-2 h-4 w-4" />
+            重置
+            <RotateCwIcon className="ml-2 h-4 w-4" />
           </Button>
         )}
       </div>

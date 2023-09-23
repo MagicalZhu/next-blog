@@ -1,9 +1,8 @@
 "use client"
 
 import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
-import { MailXIcon } from "lucide-react"
+import { EyeIcon } from "lucide-react"
 import { Table } from "@tanstack/react-table"
-
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -28,7 +27,7 @@ export function DataTableViewOptions<TData>({
           size="sm"
           className="ml-auto hidden h-8 lg:flex"
         >
-          <MailXIcon className="mr-2 h-4 w-4" />
+          <EyeIcon className="mr-2 h-4 w-4" />
           View
         </Button>
       </DropdownMenuTrigger>

@@ -1,7 +1,7 @@
 import {
   AlertTriangle,
   ArrowRight,
-  CheckCheck,
+  Check,
   Copy,
   ChevronLeft,
   ChevronRight,
@@ -15,7 +15,7 @@ import {
   Loader2,
   LucideProps,
   Moon,
-  MoreVertical,
+  CircleEllipsis,
   Pizza,
   Plus,
   Settings,
@@ -39,7 +39,7 @@ export const Icons = {
   media: Image,
   settings: Settings,
   billing: CreditCard,
-  ellipsis: MoreVertical,
+  ellipsis: CircleEllipsis,
   add: Plus,
   warning: AlertTriangle,
   user: User,
@@ -68,6 +68,6 @@ export const Icons = {
   ),
 
   twitter: Twitter,
-  check: CheckCheck,
+  check: Check,
   copy: Copy
 }

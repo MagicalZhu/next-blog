@@ -98,6 +98,9 @@ dependencies:
   '@tanstack/react-table':
     specifier: ^8.9.3
     version: registry.npmmirror.com/@tanstack/react-table@8.9.3(react-dom@18.2.0)(react@18.2.0)
+  '@types/hast':
+    specifier: ^3.0.1
+    version: registry.npmmirror.com/@types/hast@3.0.1
   '@typescript-eslint/parser':
     specifier: ^5.59.0
     version: 5.59.0(eslint@8.39.0)(typescript@4.7.4)
@@ -161,6 +164,9 @@ dependencies:
   react:
     specifier: ^18.2.0
     version: 18.2.0
+  react-day-picker:
+    specifier: ^8.8.2
+    version: registry.npmmirror.com/react-day-picker@8.8.2(date-fns@2.29.3)(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
@@ -7042,6 +7048,14 @@ packages:
     dependencies:
       '@types/unist': registry.npmmirror.com/@types/unist@2.0.6
 
+  registry.npmmirror.com/@types/hast@3.0.1:
+    resolution: {integrity: sha512-hs/iBJx2aydugBQx5ETV3ZgeSS0oIreQrFJ4bjBl0XvM4wAmDjFEALY7p0rTSLt2eL+ibjRAAs9dTPiCLtmbqQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/hast/-/hast-3.0.1.tgz}
+    name: '@types/hast'
+    version: 3.0.1
+    dependencies:
+      '@types/unist': registry.npmmirror.com/@types/unist@2.0.6
+    dev: false
+
   registry.npmmirror.com/@types/mdast@3.0.11:
     resolution: {integrity: sha512-Y/uImid8aAwrEA24/1tcRZwpxX3pIFTSilcNDKSPn+Y2iDywSEachzRuvgAYYLR3wpGXAsMbv5lvKLDZLeYPAw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/mdast/-/mdast-3.0.11.tgz}
     name: '@types/mdast'
@@ -7744,6 +7758,19 @@ packages:
     resolution: {integrity: sha512-kma4U7AFCTwpqq5twzC1YVIDXSqg6qQK6JN0smOw8fgRy1OkMi0CYSzFmsy6dnqSenamAtj0CyXMUJ1Mf6oROg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/property-information/-/property-information-6.2.0.tgz}
     name: property-information
     version: 6.2.0
+
+  registry.npmmirror.com/react-day-picker@8.8.2(date-fns@2.29.3)(react@18.2.0):
+    resolution: {integrity: sha512-sK5M5PNZaLiszmACUKUpVu1eX3eFDVV+WLdWQ3BxTPbEC9jhuawmlgpbSXX5dIIQQwJpZ4wwP5+vsMVOwa1IRw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-day-picker/-/react-day-picker-8.8.2.tgz}
+    id: registry.npmmirror.com/react-day-picker/8.8.2
+    name: react-day-picker
+    version: 8.8.2
+    peerDependencies:
+      date-fns: ^2.28.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      date-fns: 2.29.3
+      react: 18.2.0
+    dev: false
 
   registry.npmmirror.com/rehype-parse@8.0.4:
     resolution: {integrity: sha512-MJJKONunHjoTh4kc3dsM1v3C9kGrrxvA3U8PxZlP2SjH8RNUSrb+lF7Y0KVaUDnGH2QZ5vAn7ulkiajM9ifuqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rehype-parse/-/rehype-parse-8.0.4.tgz}

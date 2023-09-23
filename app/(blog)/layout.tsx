@@ -16,11 +16,10 @@ interface BlogsLayoutProperties {
 export default function BlogsLayout({ children }: BlogsLayoutProperties) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 w-full bg-background">
-        <div className="container flex h-20 items-center py-6 space-x-4 sm:justify-between sm:space-x-0">
+      <header className="sticky top-0 z-40 bg-background">
+        <div className="container flex h-20 items-center justify-center py-6 space-x-4 sm:justify-center sm:space-x-0">
           <MainNav items={globalNavConfig.mainNav} />
-          <div className="flex flex-1 items-end space-x-4 sm:justify-end">
-            {/*
+          {/* <div className="flex flex-1 items-end space-x-4 sm:justify-end">
             <nav className="flex space-x-4">
               <Link
                 href={siteConfig.links.github}
@@ -31,8 +30,7 @@ export default function BlogsLayout({ children }: BlogsLayoutProperties) {
                 <span className="sr-only">GitHub</span>
               </Link>
             </nav>
-            */}
-          </div>
+          </div> */}
         </div>
       </header>
       <div className="container flex-1">{children}</div>

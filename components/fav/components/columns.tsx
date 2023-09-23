@@ -1,50 +1,50 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-
 import { Badge } from "@/components/ui/badge"
-import { Checkbox } from "@/components/ui/checkbox"
-
 import { labels, priorities, statuses } from "@/mock/task/data"
 import { Task } from "@/mock/task/schema"
 import { DataTableColumnHeader } from "./data-table-column-header"
-import { DataTableRowActions } from "./data-table-row-actions"
+
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from "@/components/ui/avatar"
 
 export const columns: ColumnDef<Task>[] = [
   {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={table.getIsAllPageRowsSelected()}
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-        className="translate-y-[2px]"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-        className="translate-y-[2px]"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
-  {
     accessorKey: "id",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Task" />
-    ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
     enableSorting: false,
     enableHiding: false,
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="关注者" />
+    ),
+    cell: ({ row }) => {
+      return (
+        <>
+          <div  className="w-[140px]">
+            <div className="flex items-center space-x-4">
+              <Avatar>
+                <AvatarImage src="/avatars/01.png" />
+                <AvatarFallback>SD</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-sm font-medium leading-none">
+                  { row.getValue("id") }
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      )
+    }
   },
   {
     accessorKey: "title",
+    enableSorting: false,
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Title" />
+      <DataTableColumnHeader column={column} title="说明"/>
     ),
     cell: ({ row }) => {
       const label = labels.find((label) => label.value === row.original.label)
@@ -61,8 +61,9 @@ export const columns: ColumnDef<Task>[] = [
   },
   {
     accessorKey: "status",
+    enableSorting: false,
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
+      <DataTableColumnHeader column={column} title="技术" />
     ),
     cell: ({ row }) => {
       const status = statuses.find(
@@ -88,8 +89,9 @@ export const columns: ColumnDef<Task>[] = [
   },
   {
     accessorKey: "priority",
+    enableSorting: false,
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Priority" />
+      <DataTableColumnHeader column={column} title="" />
     ),
     cell: ({ row }) => {
       const priority = priorities.find(
@@ -112,9 +114,5 @@ export const columns: ColumnDef<Task>[] = [
     filterFn: (row, id, value) => {
       return value.includes(row.getValue(id))
     },
-  },
-  {
-    id: "actions",
-    cell: ({ row }) => <DataTableRowActions row={row} />,
   },
 ]

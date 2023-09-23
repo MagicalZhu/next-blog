@@ -1,6 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
-import rehypePrettyCode from "./lib/mdx-plugin/highlight/index"
+import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkDirective  from'remark-directive'
 import admonition  from'./lib/mdx-plugin/admonition/index.js'
