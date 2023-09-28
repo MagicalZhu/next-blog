@@ -15,9 +15,9 @@ interface BlogsLayoutProperties {
 
 export default function BlogsLayout({ children }: BlogsLayoutProperties) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 bg-background">
-        <div className="container flex h-20 items-center justify-center py-6 space-x-4 sm:justify-center sm:space-x-0">
+    <>
+     <header className="z-40 justify-self-center sticky top-[0px] bg-slate-200">
+        <div className="flex mx-auto h-20 items-center justify-center py-6">
           <MainNav items={globalNavConfig.mainNav} />
           {/* <div className="flex flex-1 items-end space-x-4 sm:justify-end">
             <nav className="flex space-x-4">
@@ -33,8 +33,8 @@ export default function BlogsLayout({ children }: BlogsLayoutProperties) {
           </div> */}
         </div>
       </header>
-      <div className="container flex-1">{children}</div>
+      <main className="container h-full flex-1 flex-col space-y-8 p-8 md:flex">{children}</main>
       {/* <SiteFooter className="border-t" /> */}
-    </div>
+    </>
   )
 }

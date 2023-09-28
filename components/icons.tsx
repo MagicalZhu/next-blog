@@ -24,6 +24,7 @@ import {
   Twitter,
   User,
   X,
+  Undo2,
 } from "lucide-react"
 
 
@@ -49,6 +50,7 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  back:Undo2,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

@@ -14,14 +14,14 @@ export default async function WelcomeLayout({
   children,
 }: WelcomeLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="container z-40 bg-background justify-self-center">
-        <div className="flex mx-auto  h-20 items-center justify-center py-6">
+    <>
+      <header className="z-40 justify-self-center sticky top-[0px] bg-slate-200">
+        <div className="flex mx-auto h-20 items-center justify-center py-6">
           <MainNav items={globalNavConfig.mainNav}/>
         </div>
       </header>
-      <main className="flex-1">{children}</main>
+      <main className="container h-full flex-1 flex-col space-y-8 p-8 md:flex">{children}</main>
       {/* <SiteFooter /> */}
-    </div>
+    </>
   )
 }

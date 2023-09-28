@@ -32,7 +32,7 @@ export default async function TaskPage() {
   const tasks = await getTasks()
 
   return (
-    <div className="container hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
+    <>
       <Tabs defaultValue="article">
         <TabsList className="mb-2 bg-slate-100">
           <TabsTrigger value="article" className="data-[state=active]:bg-white">收藏文章</TabsTrigger>
@@ -43,6 +43,6 @@ export default async function TaskPage() {
         </TabsContent>
         <TabsContent value="man">In Process...</TabsContent>
       </Tabs>
-    </div>
+    </>
   )
 }
