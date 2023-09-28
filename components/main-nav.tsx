@@ -7,8 +7,9 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import { MainNavItem } from "types"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
+import { Icons, IconComponent } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
+import { icons } from "lucide-react"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -19,7 +20,6 @@ interface MainNavProps {
 export function MainNav({ items, children, className }: MainNavProps) {
   const segment = useSelectedLayoutSegment()
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
-
   return (
     <div className="flex gap-6 md:gap-10">
       {/* <Link href="/" className="hidden items-left space-x-2 md:flex">
@@ -34,6 +34,7 @@ export function MainNav({ items, children, className }: MainNavProps) {
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
+              target={item.href.startsWith('https://') ? '_blank' : '_self'}
               className={cn(
                 "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
                 item.href.startsWith(`/${segment}`)
@@ -43,7 +44,7 @@ export function MainNav({ items, children, className }: MainNavProps) {
                 className
               )}
             >
-              {item.title}
+              {item.icon ? <IconComponent name={item.icon} className="h-6 w-6" />: item.title}
             </Link>
           ))}
         </nav>
@@ -52,8 +53,7 @@ export function MainNav({ items, children, className }: MainNavProps) {
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
-        {showMobileMenu ? <Icons.close /> : <Icons.logo />}
-        <span className="font-bold">Menu</span>
+        {showMobileMenu ? <Icons.close /> : <Icons.AlignLeft />}
       </button>
       {showMobileMenu && items && (
         <MobileNav items={items}>{children}</MobileNav>

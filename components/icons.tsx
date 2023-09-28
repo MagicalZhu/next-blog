@@ -24,6 +24,10 @@ import {
   Twitter,
   User,
   X,
+  Undo2,
+  BoomBox,
+  AlignLeft,
+  Heart,
 } from "lucide-react"
 
 
@@ -49,6 +53,10 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  back:Undo2,
+  BoomBox,
+  AlignLeft,
+  Heart,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
@@ -71,3 +79,9 @@ export const Icons = {
   check: Check,
   copy: Copy
 }
+
+export function IconComponent({ name,className }) {
+  const Icon = Icons[name]
+  return <Icon className={className}/>
+}
+
