@@ -25,6 +25,8 @@ import {
   User,
   X,
   Undo2,
+  Heart,
+  BoomBox
 } from "lucide-react"
 
 
@@ -71,7 +73,9 @@ export const Icons = {
 
   twitter: Twitter,
   check: Check,
-  copy: Copy
+  copy: Copy,
+  Heart,
+  BoomBox
 }
 
 export function IconComponent({ name,className }) {
