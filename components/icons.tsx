@@ -25,9 +25,6 @@ import {
   User,
   X,
   Undo2,
-  BoomBox,
-  AlignLeft,
-  Heart,
 } from "lucide-react"
 
 
@@ -54,9 +51,6 @@ export const Icons = {
   moon: Moon,
   laptop: Laptop,
   back:Undo2,
-  BoomBox,
-  AlignLeft,
-  Heart,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

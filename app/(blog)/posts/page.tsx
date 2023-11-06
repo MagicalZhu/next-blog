@@ -60,7 +60,7 @@ export default function PostsPage() {
             ))}
           </div>
           <div className="top-[88px] sticky">
-            <span className="font-bold">分类:</span>
+            <span>分类:</span>
             <ul className="ml-6 list-disc [&>li]:mt-2">
               <li>Vue</li>
               <li>周刊</li>

@@ -15,8 +15,8 @@ export default async function WelcomeLayout({
 }: WelcomeLayoutProps) {
   return (
     <>
-      <header className="z-40 justify-self-center sticky top-[0px]">
-        <div className="flex mx-auto h-15 items-end justify-end py-6 pr-8">
+      <header className="z-40 justify-self-center sticky top-[0px] bg-slate-200">
+        <div className="flex mx-auto h-20 items-center justify-center py-6">
           <MainNav items={globalNavConfig.mainNav}/>
         </div>
       </header>
