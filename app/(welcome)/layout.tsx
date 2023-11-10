@@ -20,7 +20,7 @@ export default async function WelcomeLayout({
           <MainNav items={globalNavConfig.mainNav}/>
         </div>
       </header>
-      <main className="container h-full flex-1 flex-col space-y-8 p-8 md:flex">{children}</main>
+      <main className="container md:max-w-[85ch] h-full flex-1 flex-col space-y-5 p-8 md:flex">{children}</main>
       {/* <SiteFooter /> */}
     </>
   )

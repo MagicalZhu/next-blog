@@ -26,7 +26,10 @@ import {
   X,
   Undo2,
   Heart,
-  BoomBox
+  BoomBox,
+  MoveUpRight,
+  Mail,
+  Github
 } from "lucide-react"
 
 
@@ -53,6 +56,7 @@ export const Icons = {
   moon: Moon,
   laptop: Laptop,
   back:Undo2,
+  Github,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
@@ -75,11 +79,13 @@ export const Icons = {
   check: Check,
   copy: Copy,
   Heart,
-  BoomBox
+  BoomBox,
+  MoveUpRight,
+  Mail
 }
 
 export function IconComponent({ name,className }) {
   const Icon = Icons[name]
-  return <Icon className={className}/>
+  return <Icon className={className} strokeWidth={1.5}/>
 }
 
