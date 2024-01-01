@@ -18,22 +18,6 @@ const computedFields = {
   },
 }
 
-export const Page = defineDocumentType(() => ({
-  name: "Page",
-  filePathPattern: `pages/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-  },
-  computedFields,
-}))
-
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -44,25 +28,43 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    description: {
-      type: "string",
-    },
     date: {
       type: "date",
       required: true,
     },
-    published: {
+    description: {
+      type: "string",
+    },
+    draft: {
       type: "boolean",
-      default: true,
+      default: false,
+    },
+    forward: {
+      type: "boolean",
+      default: false,
+    },
+    fav: {
+      type: "boolean",
+      default: false,
+    },
+    lock: {
+      type: "boolean",
+      default: false,
     },
     image: {
       type: "string",
-      required: true,
     },
     authors: {
-      type: "list",
-      of: { type: "string" },
-      required: true,
+      type: "string",
+      default: 'ant',
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+    },
+    categories: {
+      type: 'list',
+      of: { type: 'string' },
     },
   },
   computedFields,
@@ -71,7 +73,7 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Post, Page],
+  documentTypes: [Post],
   mdx: {
     remarkPlugins: [
       remarkGfm,
@@ -83,7 +85,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "nord",
+          theme: "github-dark",
           onVisitLine(node) {
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }]

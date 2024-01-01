@@ -1,19 +1,18 @@
 import { Inter } from "next/font/google"
 import localFont from "next/font/local"
-
-import "@/styles/globals.css"
+import "@/styles/index.css"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
-import { Analytics } from "@/components/analytics"
 import { ThemeProvider } from "@/components/theme-provider"
 
 // set font
 const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: 'swap',
 })
+
+// Font files can be colocated inside of `pages`
 const fontHeading = localFont({
   src: "../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
@@ -30,6 +29,11 @@ export const metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "Blog",
+    "Tailwind CSS",
+  ],
   authors: [
     {
       name: "huakucha",
@@ -62,6 +66,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
+          "slide-enter",
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
           fontHeading.variable
@@ -69,9 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
-          <Analytics />
           <Toaster />
-          {/* <TailwindIndicator /> */}
         </ThemeProvider>
       </body>
     </html>

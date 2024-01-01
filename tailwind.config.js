@@ -1,4 +1,7 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
+const animate = require("tailwindcss-animate")
+const typography = require('@tailwindcss/typography')
+const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -78,5 +81,12 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    animate,
+    typography,
+    iconsPlugin({
+      collections: getIconCollections(["prime", "carbon","fluent-emoji"]),
+      scale: 1.2
+    }),
+  ],
 }

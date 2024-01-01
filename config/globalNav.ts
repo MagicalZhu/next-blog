@@ -4,13 +4,8 @@ export const globalNavConfig: GlobalNavConfig = {
   mainNav: [
     {
       title: "Blog",
-      href: "https://blog.huakucha.top/posts",
-      icon: "BoomBox"
+      href: "/posts",
+      icon: "LayoutList"
     },
-    {
-      title: "Fav",
-      href: "/fav",
-      icon: "Heart"
-    }
   ],
 }

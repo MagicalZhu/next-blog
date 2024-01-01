@@ -22,15 +22,9 @@ export function MainNav({ items, children, className }: MainNavProps) {
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
   return (
     <div className="flex gap-6 md:gap-10">
-      {/* <Link href="/" className="hidden items-left space-x-2 md:flex">
-        <Icons.logo />
-        <span className="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
-      </Link> */}
       {items?.length ? (
         <nav className="hidden gap-6 md:flex float-right">
-          {items?.map((item, index) => (
+          { items?.map((item, index) => (
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
@@ -56,7 +50,9 @@ export function MainNav({ items, children, className }: MainNavProps) {
         { showMobileMenu ? <Icons.close /> : <Icons.chevronRight />}
       </button>
       {showMobileMenu && items && (
-        <MobileNav items={items}>{children}</MobileNav>
+        <MobileNav items={items}>
+          {children}
+        </MobileNav>
       )}
     </div>
   )

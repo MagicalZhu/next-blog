@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* index */
+  .indexBlock {
+    @apply italic font-bold;
+  }
+  .indexBlock::before {
+    content: "::: ";
+  }
+
+  .indexSection {
+    @apply mt-[15px] font-extrabold;
+  }
+
+  .indexHr {
+    @apply w-[50px] mx-auto;
+  }
+
+  .connectItem {
+    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32;
+  }
+
+  /* navbar */
+
+  .nav-item {
+    @apply flex items-center space-x-1 pr-2 hover:text-black text-muted-foreground
+  }
+
+  .tagName {
+    @apply inline  opacity-40 text-xs rounded-md  p-1 bg-gray-200 ml-2 mr-1;
+    margin-top: -10px;
+    color: #1f1f29;
+  }
+
+}

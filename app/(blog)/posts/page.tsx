@@ -8,13 +8,12 @@ import { DocsPageHeader } from "@/components/page-header"
 
 export const metadata = {
   title: "Posts",
-  description:
-    "This section includes end-to-end guides for developing Next.js 13 apps.",
+  description: "Posts",
 }
 
 export default function PostsPage() {
   const posts = allPosts
-    .filter((guide) => guide.published)
+    .filter((guide) => !guide.draft)
     .sort((a, b) => {
       return compareDesc(new Date(a.date), new Date(b.date))
     })
@@ -49,7 +48,7 @@ export default function PostsPage() {
                   </div>
                   {post.date && (
                     <p className="text-sm text-muted-foreground">
-                      {formatDate(post.date)}
+                      {formatDate(post.date, true)}
                     </p>
                   )}
                 </div>
@@ -59,7 +58,7 @@ export default function PostsPage() {
               </article>
             ))}
           </div>
-          <div className="top-[88px] sticky">
+          {/* <div className="top-[88px] sticky">
             <span>分类:</span>
             <ul className="ml-6 list-disc [&>li]:mt-2">
               <li>Vue</li>
@@ -67,7 +66,7 @@ export default function PostsPage() {
               <li>React</li>
               <li>Java</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       ) : (
         <p>No posts published.</p>

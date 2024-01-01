@@ -26,7 +26,8 @@ import {
   X,
   Undo2,
   Heart,
-  BoomBox
+  BoomBox,
+  LayoutList
 } from "lucide-react"
 
 
@@ -75,7 +76,8 @@ export const Icons = {
   check: Check,
   copy: Copy,
   Heart,
-  BoomBox
+  BoomBox,
+  LayoutList
 }
 
 export function IconComponent({ name,className }) {

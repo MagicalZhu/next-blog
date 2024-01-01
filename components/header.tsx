@@ -1,21 +1,24 @@
-interface DashboardHeaderProps {
-  heading: string
-  text?: string
-  children?: React.ReactNode
-}
+import { MainNav } from "@/components/main-nav"
+import { globalNavConfig } from "@/config/globalNav"
 
-export function DashboardHeader({
-  heading,
-  text,
-  children,
-}: DashboardHeaderProps) {
+export function MainHeader() {
   return (
-    <div className="flex items-center justify-between px-2">
-      <div className="grid gap-1">
-        <h1 className="font-heading text-3xl md:text-4xl">{heading}</h1>
-        {text && <p className="text-lg text-muted-foreground">{text}</p>}
+    <header className="z-40 justify-self-center sticky top-[0px] bg-white">
+      <div className="flex h-[3em] items-end justify-end py-3 px-6">
+        <MainNav items={globalNavConfig.mainNav} />
+        {/* <div className="flex flex-1 items-end space-x-4 sm:justify-end">
+          <nav className="flex space-x-4">
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              s.gitHub className="h-7 w-<Icon7" />
+              <span className="sr-only">GitHub</span>
+            </Link>
+          </nav>
+        </div> */}
       </div>
-      {children}
-    </div>
+    </header>
   )
 }
