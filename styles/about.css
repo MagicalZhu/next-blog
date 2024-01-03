@@ -1,0 +1,16 @@
+  .blockTitle {
+    @apply md:text-lg font-extrabold italic font-mono;
+  }
+  .blockTitle::before {
+    content: "::: ";
+  }
+
+  .connectItem {
+    @apply flex items-center gap-1 cursor-pointer hover:opacity-30 w-32 text-base;
+  }
+
+  hr {
+    width: 50px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }

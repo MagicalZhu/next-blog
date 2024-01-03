@@ -27,7 +27,8 @@ import {
   Undo2,
   Heart,
   BoomBox,
-  LayoutList
+  LayoutList,
+  MoveUpRight
 } from "lucide-react"
 
 
@@ -77,11 +78,12 @@ export const Icons = {
   copy: Copy,
   Heart,
   BoomBox,
-  LayoutList
+  LayoutList,
+  MoveUpRight
 }
 
 export function IconComponent({ name,className }) {
   const Icon = Icons[name]
-  return <Icon className={className}/>
+  return <Icon className={className} strokeWidth={1.5}/>
 }
 
