@@ -35,4 +35,17 @@
     color: #1f1f29;
   }
 
+  .blogGroup {
+    height: 3em;
+  }
+
+  .blogYear {
+    @apply top-[-1rem];
+    position: absolute;
+    bottom: 5.25rem;
+    left: 1.5rem;
+    font-size: 6em;
+    font-weight: 900;
+    opacity: 0.1;
+  }
 }

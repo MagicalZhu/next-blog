@@ -16,10 +16,10 @@ export default function BlogsLayout({ children }: BlogsLayoutProperties) {
   return (
     <>
       <MainHeader/>
-      <main className="mx-auto max-w-[85%] h-full flex-1 flex-col space-y-8 p-8 md:flex">
+      <div className="mx-auto max-w-[1200px] h-full flex-1 flex-col space-y-8 px-8 md:flex">
         {children}
-      </main>
-      {/* <SiteFooter className="border-t" /> */}
+      </div>
+      <SiteFooter />
     </>
   )
 }

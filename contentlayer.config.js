@@ -3,7 +3,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkDirective  from'remark-directive'
-import admonition  from'./lib/mdx-plugin/admonition/index.js'
+import admonition  from 'remark-admonitions'
 import remarkGfm from "remark-gfm"
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
@@ -78,7 +78,6 @@ export default makeSource({
     remarkPlugins: [
       remarkGfm,
       [remarkDirective],
-      [admonition]
     ],
     rehypePlugins: [
       rehypeSlug,

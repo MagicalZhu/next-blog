@@ -38,7 +38,7 @@ export function MainNav({ items, children, className }: MainNavProps) {
                 className
               )}
             >
-              {item.icon ? <IconComponent name={item.icon} className="h-6 w-6" />: item.title}
+              {item.icon ? <IconComponent name={item.icon} className="h-5 w-5" />: item.title}
             </Link>
           ))}
         </nav>

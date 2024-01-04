@@ -6,5 +6,6 @@ export const siteConfig: SiteConfig = {
   url: "https://www.huakucha.com",
   links: {
     github: "https://github.com/MagicalZhu",
+    license: 'https://creativecommons.org/licenses/by-nc-nd/4.0/'
   },
 }

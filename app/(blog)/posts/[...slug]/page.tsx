@@ -66,8 +66,8 @@ export default async function PostPage({ params }: PostPageProps) {
   const toc = await getTableOfContents(page.body.raw)
   return (
     <>
-      <main className="slide-enter relative py-6 lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-10 xl:gap-20">
-        <div>
+     <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
+      <div  className="mx-auto w-full min-w-0">
           <DocsPageHeader heading={page.title} text={page.description} />
           <Mdx code={page.body.code} />
           <hr className="my-4" />
@@ -81,7 +81,7 @@ export default async function PostPage({ params }: PostPageProps) {
             </Link>
           </div>
         </div>
-        <div className="text-sm lg:block flex">
+        <div className="hidden text-sm xl:block">
           <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
             <TableOfContents toc={toc} />
           </div>
