@@ -69,7 +69,9 @@ export default async function PostPage({ params }: PostPageProps) {
      <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
       <div  className="mx-auto w-full min-w-0">
           <DocsPageHeader heading={page.title} text={page.description} />
-          <Mdx code={page.body.code} />
+          <article>
+            <Mdx code={page.body.code} />
+          </article>
           <hr className="my-4" />
           <div className="flex justify-start py-6 lg:py-10">
             <Link
