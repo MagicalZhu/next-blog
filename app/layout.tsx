@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
 
 // set font
 const fontSans = Inter({
@@ -47,7 +48,7 @@ export const metadata = {
   ],
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "zh-cn",
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
           <Toaster />
+          <TailwindIndicator />
         </ThemeProvider>
       </body>
     </html>

@@ -2,9 +2,9 @@ import * as React from "react"
 import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import { cn } from "@/lib/utils"
-import { Callout } from "@/components/callout"
-import { MdxCard } from "@/components/mdx-card"
-import { Pre } from './mdx/pre'
+import { Callout } from "@/components/mdx/callout"
+import { MdxCard } from "@/components/mdx/mdx-card"
+import { CopyButton } from "@/components/mdx/copy-button"
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -101,7 +101,6 @@ const components = {
     alt,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("rounded-md border", className)} alt={alt} {...props} />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
@@ -134,16 +133,36 @@ const components = {
       {...props}
     />
   ),
-  pre: ({ className, ...props }) => (
-    <Pre
-      className={cn(
-        "mb-4 mt-6 overflow-x-auto  border bg-black py-4",
-        className
-      )}
-      {...props}
-    >
-    </Pre>
-  ),
+  pre: ({
+    className,
+    __rawString__,
+    __withMeta__,
+    __src__,
+    ...props
+  }: React.HTMLAttributes<HTMLPreElement> & {
+    __rawString__?: string
+    __withMeta__?: boolean
+    __src__?: string
+  }) => {
+    return (
+      <>
+        <pre
+          className={cn(
+            "max-h-[650px] overflow-x-auto border bg-black py-4 ",
+            className
+          )}
+          {...props}
+        />
+        {__rawString__ && (
+          <CopyButton
+            value={__rawString__}
+            src={__src__}
+            className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
+          />
+        )}
+      </>
+    )
+  },
   code: ({ className, ...props }) => (
     <code
       className={cn(

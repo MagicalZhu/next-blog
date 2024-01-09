@@ -1,9 +1,13 @@
-import { MainNav } from "@/components/main-nav"
+import { MainNav } from "@/components/layout/main-nav"
+import { cn } from "@/lib/utils"
 import { globalNavConfig } from "@/config/globalNav"
 
 export function MainHeader() {
   return (
-    <header className="z-40 justify-self-center sticky top-[0px] bg-white">
+    <header className={cn(
+      "z-40 justify-self-center sticky top-[0px]",
+      "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    )}>
       <div className="flex h-[3em] items-end justify-end py-3 px-6">
         <MainNav items={globalNavConfig.mainNav} />
         {/* <div className="flex flex-1 items-end space-x-4 sm:justify-end">

@@ -1,11 +1,7 @@
 
-import { MainHeader } from "@/components/header"
-import { DocsSearch } from "@/components/search"
-import { DocsSidebarNav } from "@/components/sidebar-nav"
-import { SiteFooter } from "@/components/site-footer"
-import { siteConfig } from "@/config/site"
-import { Icons } from "@/components/icons"
-import Link from "next/link"
+import { MainHeader } from "@/components/layout/header"
+import { DocsSearch } from "@/components/func/search"
+import { SiteFooter } from "@/components/layout/site-footer"
 
 interface BlogsLayoutProperties {
   children: React.ReactNode

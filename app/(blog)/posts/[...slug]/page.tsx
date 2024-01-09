@@ -4,9 +4,9 @@ import { allPosts } from "contentlayer/generated"
 
 import { getTableOfContents } from "@/lib/toc"
 import { Icons } from "@/components/icons"
-import { Mdx } from "@/components/mdx-components"
-import { DocsPageHeader } from "@/components/page-header"
-import { TableOfContents } from "@/components/toc"
+import { Mdx } from "@/components/mdx/mdx-components"
+import { DocsPageHeader } from "@/components/layout/page-header"
+import { TableOfContents } from "@/components/mdx/toc"
 
 import { Metadata } from "next"
 import {  cn } from "@/lib/utils"

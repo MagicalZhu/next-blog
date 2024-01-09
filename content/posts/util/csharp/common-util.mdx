@@ -19,7 +19,7 @@ authors: ant
 
 ## 服务端代码
 
-```c#
+```c# title="next.config.mjs" {1-8}
 static void Main(string[] args) {
   Console.WriteLine("服务器运行！");
   IPAddress ip = new IPAddress(new byte[] { 192, 168, 220, 1 });

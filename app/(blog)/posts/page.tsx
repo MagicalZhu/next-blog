@@ -5,7 +5,7 @@ import { compareDesc } from "date-fns"
 import { Icons } from "@/components/icons"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { formatDate } from "@/lib/utils"
-import { DocsPageHeader } from "@/components/page-header"
+import { DocsPageHeader } from "@/components/layout/page-header"
 import {getYear} from 'date-fns'
 
 export const metadata = {

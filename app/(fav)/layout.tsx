@@ -1,7 +1,7 @@
 import { globalNavConfig } from "@/config/globalNav"
 import { cn } from "@/lib/utils"
-import { MainNav } from "@/components/main-nav"
-import { SiteFooter } from "@/components/site-footer"
+import { MainNav } from "@/components/layout/main-nav"
+import { SiteFooter } from "@/components/layout/site-footer"
 
 interface FavLayoutProps {
   children: React.ReactNode
