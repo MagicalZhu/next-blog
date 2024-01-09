@@ -87,13 +87,16 @@ export default function PostsPage() {
           </div>
           <div className="hidden text-sm xl:block">
             <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10 float-right">
-              <span>分类:</span>
+              <span>标签:</span>
               <ul className="ml-6 list-disc [&>li]:mt-2">
                 {
                   Object.keys(tagsData).map((tag) => (
                     <li>
-                      <span>{tag}</span>
-                      <span className="rounded-full ml-4 p-[2px] bg-emerald-500">{tagsData[tag]}</span>
+                      <Link href={"/posts"}
+                            className="underline decoration-dashed hover:decoration-solid decoration-1 underline-offset-2">
+                        <span>{tag}</span>
+                      </Link>
+                      <span className="ml-4 text-xs text-muted-foreground">{tagsData[tag]}</span>
                     </li>
                   ))
                 }
