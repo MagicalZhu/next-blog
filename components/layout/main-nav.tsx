@@ -21,7 +21,7 @@ export function MainNav({ items, children, className }: MainNavProps) {
   return (
       <div className="flex gap-6 md:gap-10 ">
         {items?.length ? (
-          <nav className="hidden gap-6 md:flex float-right">
+          <nav className="hidden gap-3 md:flex float-right">
             { items?.map((item, index) => (
               <Link
                 key={index}

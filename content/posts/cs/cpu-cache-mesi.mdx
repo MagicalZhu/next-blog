@@ -1,13 +1,17 @@
 ---
-  author: '花裤衩'
-  title: 基础-CPU、Cache、MESI
-  tags:
-    - CS
-    - OS
-  date: 2022-12-05 15:53:21
-  categories: CS基础
-  draft: false
-  description: CPU、高速缓存、缓存行、MESI等相关知识总结记录
+title: 基础-CPU、Cache、MESI
+description: CPU、高速缓存、缓存行、MESI等相关知识总结记录
+authors: ant
+date: "2022-12-05 15:53:21"
+tags:
+  - CS
+  - OS
+categories:
+  - CS基础
+forward: true
+lock: false
+fav: false
+draft: false
 ---
 
 > 学习顺序：**CPU缓存 –> 缓存一致性协议MESI –> Store Buffers –> Invalidate Queue –> 内存屏障 –> volatile –> JMM内存模型 –> JMM中定义的内存屏障**
@@ -191,11 +195,11 @@ CPU遇到读屏障时，必须先将失效队列中的写事务全部处理完�
 
 # 参考
 
-1. <app-link to="https://coolshell.cn/articles/20793.html" class="sourceLink">与程序员相关的CPU缓存知识</app-link>
-2. <app-link to="https://www.0xffffff.org/2017/02/21/40-atomic-variable-mutex-and-memory-barrier/" class="sourceLink">聊聊原子变量、锁、内存屏障那点事</app-link>
-3. <app-link to="https://www.cnblogs.com/xiaoxiongcanguan/p/13184801.html" class="sourceLink">高速缓存一致性协议MESI与内存屏障</app-link>
-4. <app-link to="http://www.wowotech.net/kernel_synchronization/Why-Memory-Barriers.html" class="sourceLink">Why Memory Barriers</app-link>
-5. <app-link to="https://monkeysayhi.github.io/2017/12/28/一文解决内存屏障" class="sourceLink">一文解决内存屏障</app-link>
+1. [与程序员相关的CPU缓存知识](https://coolshell.cn/articles/20793.html)
+2. [聊聊原子变量、锁、内存屏障那点事](https://www.0xffffff.org/2017/02/21/40-atomic-variable-mutex-and-memory-barrier/)
+3. [高速缓存一致性协议MESI与内存屏障](https://www.cnblogs.com/xiaoxiongcanguan/p/13184801.html)
+4. [Why Memory Barriers?](http://www.wowotech.net/kernel_synchronization/Why-Memory-Barriers.html)
+5. [一文解决内存屏障](https://monkeysayhi.github.io/2017/12/28/一文解决内存屏障)
 
 
 

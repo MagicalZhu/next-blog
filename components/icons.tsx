@@ -72,14 +72,19 @@ export const Icons = {
       ></path>
     </svg>
   ),
-
   twitter: Twitter,
   check: Check,
   copy: Copy,
   Heart,
   BoomBox,
   LayoutList,
-  MoveUpRight
+  MoveUpRight,
+  home:()=> (
+    <div className="i-carbon-home h-5 w-5"/>
+  ),
+  posts:()=> (
+    <div className="i-carbon-catalog h-5 w-5"/>
+  ),
 }
 
 export function IconComponent({ name,className }) {

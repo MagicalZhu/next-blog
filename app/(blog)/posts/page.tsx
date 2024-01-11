@@ -4,7 +4,7 @@ import type { Post } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
 import { Icons } from "@/components/icons"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { formatDate } from "@/lib/utils"
+import { formatDate,cn } from "@/lib/utils"
 import { DocsPageHeader } from "@/components/layout/page-header"
 import {getYear} from 'date-fns'
 
@@ -47,7 +47,7 @@ export default function PostsPage() {
   return (
     <>
       {Object.keys(postData)?.length ? (
-        <main className="relative py-6 lg:gap-16 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
+        <main className="relative lg:gap-16 xl:grid xl:grid-cols-[1fr_200px]">
           <div className="space-y-8">
             {
               Object.keys(postData).sort((a,b) => {  return parseInt(b) - parseInt(a) })
@@ -65,7 +65,7 @@ export default function PostsPage() {
                       className="flex items-center"
                     >
                       <div className="ml-4 space-y-1">
-                        <p className="text-lg font-semibold leading-none">{post.title}</p>
+                        <p className="font-semibold leading-none">{post.title}</p>
                         {post.description &&
                           (
                             <p className="text-sm text-muted-foreground">
@@ -93,7 +93,10 @@ export default function PostsPage() {
                   Object.keys(tagsData).map((tag) => (
                     <li>
                       <Link href={"/posts"}
-                            className="underline decoration-dashed hover:decoration-solid decoration-1 underline-offset-2">
+                            className={cn(
+                              "underline decoration-wavy decoration-1 underline-offset-2",
+                              "decoration-slate-400 hover:decoration-slate-800"
+                            )}>
                         <span>{tag}</span>
                       </Link>
                       <span className="ml-4 text-xs text-muted-foreground">{tagsData[tag]}</span>
