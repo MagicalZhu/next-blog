@@ -67,44 +67,41 @@ export default async function PostPage({ params }: PostPageProps) {
   const toc = await getTableOfContents(page.body.raw)
   return (
     <>
-     <main className="slide-enter relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
-      <div  className="mx-auto w-full min-w-0">
-        <div>
-          <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
-            {page.title}
-          </h1>
-          {page.authors?.length ? (
-            <div className="mt-4 flex space-x-4">
-              { page.authors ? (
-                  <Link
-                    key={page.authors}
-                    href={`https://twitter.com/${page.authors}`}
-                    className="flex items-center space-x-2 text-sm"
-                  >
-                    <Avatar>
-                      <AvatarImage src="https://github.com/shadcn.png" />
-                      <AvatarFallback>{page.authors}</AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1 text-left leading-tight">
-                      <p className="font-medium">{page.authors}</p>
-                      <p className="text-[12px] text-muted-foreground">
-                        @{page.authors}
-                      </p>
-                    </div>
-                  </Link>
-                ) : null
-              }
-              {page.date && (
-                <time
-                  dateTime={page.date}
-                  className="text-sm text-muted-foreground"
-                >
-                  Published on {formatDate(page.date)}
-                </time>
-              )}
-            </div>
-          ) : null}
-        </div>
+      <main className="slide-enter relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
+        <div  className="mx-auto w-full min-w-0">
+          <div>
+            <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
+              {page.title}
+            </h1>
+            {page.authors?.length ? (
+              <div className="mt-6 flex space-x-4 pl-4">
+                { page.authors ? (
+                    <Link
+                      href={`https://twitter.com/${page.authors}`}
+                      className="flex items-center space-x-2 text-sm"
+                    >
+                      <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback>{page.authors}</AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 text-left leading-tight">
+                        <p className="font-medium">{page.authors}</p>
+                        <p className="text-xs text-muted-foreground">
+                          @{page.authors}
+                        </p>
+                      </div>
+                    </Link>
+                  ) : null
+                }
+                {page.date && (
+                  <time dateTime={page.date}
+                        className="text-sm text-muted-foreground my-auto">
+                    Published on {formatDate(page.date)}
+                  </time>
+                )}
+              </div>
+            ) : null}
+          </div>
           <article>
             <Mdx code={page.body.code} />
           </article>

@@ -28,7 +28,8 @@ import {
   Heart,
   BoomBox,
   LayoutList,
-  MoveUpRight
+  MoveUpRight,
+  ExternalLink
 } from "lucide-react"
 
 
@@ -79,6 +80,7 @@ export const Icons = {
   BoomBox,
   LayoutList,
   MoveUpRight,
+  ExternalLink,
   home:()=> (
     <div className="i-carbon-home h-5 w-5"/>
   ),

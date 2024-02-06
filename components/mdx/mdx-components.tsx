@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import { cn } from "@/lib/utils"
 import { Callout } from "@/components/mdx/callout"
+import { RefLink } from "@/components/mdx/RefLink"
 import { MdxCard } from "@/components/mdx/mdx-card"
 import { CopyButton } from "@/components/mdx/copy-button"
 
@@ -175,6 +176,7 @@ const components = {
   Image,
   Callout,
   Card: MdxCard,
+  RefLink
 }
 
 interface MdxProps {
