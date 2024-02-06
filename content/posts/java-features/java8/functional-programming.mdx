@@ -54,7 +54,7 @@ draft: false
     ```
 - Lambda表达式有个限制, 那就是只能操作 `final` 或 `final 局部变量`，这就是说**不能在Lambda内部修改定义在域外的变量(如果仅仅是访问的话是可以的)**
 
-  ```java {lines: '5'}
+  ```java {5}
   List<Integer> primes = Arrays.asList(new Integer[] { 2, 3, 5, 7 });
   int factor = 2;
   // ERROR: Local variables referenced from a lambda expression must be final or effectively final
@@ -431,5 +431,5 @@ System.out.println(val);  // out:500
 4. 函数型接口: `Function<T,R>   R apply(T t)`, 定义了有参,有返回值的抽象方法
 
 # 参考
-1. <app-link to="https://pdai.tech/md/java/java8/java8-stream.html" class="sourceLink">Java8-函数编程(lambda表达式)</app-link>
-2. <app-link to="https://github.com/aalansehaiyang/java8-tutorial" class="sourceLink">java8-tutorial</app-link>
+1. [Java8-函数编程(lambda表达式)](https://pdai.tech/md/java/java8/java8-stream.html)
+2. [java8-tutorial](https://github.com/aalansehaiyang/java8-tutorial)

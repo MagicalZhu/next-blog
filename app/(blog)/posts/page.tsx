@@ -76,7 +76,7 @@ export default function PostsPage() {
                       </div>
                       {post.date && (
                         <div className="text-xs ml-auto text-muted-foreground">
-                          {formatDate(post.date, true)}
+                          {formatDate(post.date)}
                         </div>
                       )}
                     </Link>
@@ -91,7 +91,7 @@ export default function PostsPage() {
               <ul className="ml-6 list-disc [&>li]:mt-2">
                 {
                   Object.keys(tagsData).map((tag) => (
-                    <li>
+                    <li className="marker:text-slate-400">
                       <Link href={"/posts"}
                             className={cn(
                               "underline decoration-wavy decoration-1 underline-offset-2",

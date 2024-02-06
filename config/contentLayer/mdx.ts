@@ -20,14 +20,6 @@ const mdx: MDXOptions = {
           if (codeEl.tagName !== "code") {
             return
           }
-          if (codeEl.data?.meta) {
-            const regex = /event="([^"]*)"/
-            const match = codeEl.data?.meta.match(regex)
-            if (match) {
-              node.__event__ = match ? match[1] : null
-              codeEl.data.meta = codeEl.data.meta.replace(regex, "")
-            }
-          }
           node.__rawString__ = codeEl.children?.[0].value
           node.__src__ = node.properties?.__src__
         }

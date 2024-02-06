@@ -118,7 +118,7 @@ public class FactoryBeanDemo {
 
 在获取 User 类型的对象时,会进入 `DefaultListableBeanFactory#getBean(Class<T> requiredType)` 方法,通过 Bean 的类型获取 Bean 对象,该方法通过`DefaultListableBeanFactory#resolveNamedBean` 来获取 Bean
 
-```java {lines: '6, 16-19'}
+```java {6, 16-19}
 private <T> NamedBeanHolder<T> resolveNamedBean(ResolvableType requiredType,
                       @Nullable Object[] args,
                       boolean nonUniqueAsNull) throws BeansException {
@@ -157,7 +157,7 @@ private <T> NamedBeanHolder<T> resolveNamedBean(ResolvableType requiredType,
 
 这里实际上调用了方法: `DefaultListableBeanFactory#doGetBeanNamesForType`
 
-```java {lines: '28, 36-37'}
+```java {28, 36-37}
 /**
  * @param type: 依赖查找传入的类型,这里就是 User
  */
@@ -231,7 +231,7 @@ private String[] doGetBeanNamesForType(ResolvableType type,
 3. `getObjectForBeanInstance`
     - 这个方法主要是获取 Bean 对象
 
-```java {lines: '28,36'}
+```java {28,36}
 /**
  * @param name 传入的 beanName
  */
@@ -308,7 +308,7 @@ protected <T> T doGetBean(final String name,
     - 该方法就是利用 FactoryBean 创建一个 bean,比如这里就是利用 UserFactory 创建 User
     - 实际上是调用 FactoryBean#getObject 方法
 
-```java {lines: '7,31'}
+```java {7,31}
 protected Object getObjectForBeanInstance(Object beanInstance,
             String name,
             String beanName,

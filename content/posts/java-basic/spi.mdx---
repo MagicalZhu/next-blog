@@ -14,6 +14,7 @@ fav: false
 draft: false
 ---
 
+
 # 什么是SPI
 
 SPI (Service Provider Interface), 是JDK内置的一种 **`服务发现机制`**, 可以用来**启用框架拓展和替换组件**。它主要面向于框架的开发者使用,比如数据库驱动接口 `java.sql.Driver`, 不同的数据库厂商可以针对同一接口做出不同的实现(MySQL 和 PostgreSQL都有不同的实现提供给用户)。
@@ -119,7 +120,7 @@ Connection conn = DriverManager.getConnection(url,username,password);
 
 我们看下 DriverManager 的处理:
 
-```java {lines: "28-34"}
+```java {28-34}
 /**
   * 静态代码块,加载类的时候就会被调用,主要用于加载 JDBC 的各种驱动
   * Load the initial JDBC drivers by checking the System property
@@ -188,7 +189,7 @@ private static void loadInitialDrivers() {
     ```
 2. LogFactory 是一个抽象类,它负责加载具体的日志实现,可以分析其 getFactory() 方法
 
-    ``` java {lines: '7-8,28-40'}
+    ``` java {7-8,28-40}
     public static final String FACTORY_PROPERTY =
                         "org.apache.commons.logging.LogFactory";
     public static final String FACTORY_DEFAULT =
@@ -550,7 +551,7 @@ public final class ServiceLoader<S>
 
 2. 其次 LazyIterator 中的 hasNext 方法, 静态变量PREFIX就是`META-INF/services/`目录,这也就是为什么需要在classpath下的META-INF/services/ 目录里创建一个以服务接口命名的文件。
 
-3. 最后通过反射方法Class.forName()加载类对象,并用 `newInstance` 方法将类实例化,并把实例化后的类缓存到 providers 对象中,(LinkedHashMap<String,S>类型）然后返回实例对象
+3. 最后通过反射方法Class.forName()加载类对象,并用 `newInstance` 方法将类实例化, 并把实例化后的类缓存到 providers 对象中,(LinkedHashMap<String,S>类型）然后返回实例对象
 
 所以我们可以看到: <mark>ServiceLoader 不是实例化以后,就去读取配置文件中的具体实现,并进行实例化。而是等到使用迭代器去遍历的时候,才会加载对应的配置文件去解析,调用hasNext方法的时候会去加载配置文件进行解析,调用next方法的时候进行实例化并缓存</mark>
 
@@ -559,6 +560,7 @@ public final class ServiceLoader<S>
 ### SPI的缺陷
 
 通过上面的解析可以发现,我们使用SPI机制的缺陷:
+
 1. 不能按需加载,需要遍历所有的实现,并实例化,然后在循环中才能找到我们需要的实现。如果不想用某些实现类,或者某些类实例化很耗时,它也被载入并实例化了,这就造成了浪费。
 
 2. 获取某个实现类的方式不够灵活,只能通过 Iterator 形式获取,不能根据某个参数来获取对应的实现类。
@@ -567,5 +569,5 @@ public final class ServiceLoader<S>
 
 # 参考资料
 
-1. <app-link to="https://pdai.tech/md/java/advanced/java-advanced-spi.html" class="sourceLink">Java常用机制 - SPI机制详解</app-link>
-2. <app-link to="https://www.cnblogs.com/happyframework/archive/2013/09/17/3325560.html" class="sourceLink">设计原则：小议 SPI 和 API</app-link>
+1. [Java常用机制 - SPI机制详解](https://pdai.tech/md/java/advanced/java-advanced-spi.html)
+2. [设计原则：小议 SPI 和 API](https://www.cnblogs.com/happyframework/archive/2013/09/17/3325560.html)

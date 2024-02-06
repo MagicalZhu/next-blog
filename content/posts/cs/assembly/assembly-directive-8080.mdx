@@ -7,7 +7,7 @@ tags:
   - CS
   - 汇编
 categories:
-  -CS基础
+  - CS基础
 forward: true
 lock: false
 fav: false
@@ -37,10 +37,10 @@ draft: false
 
 - `IN`
   - I/O端口输入
-  - 语法: IN 累加器, {端口号│DX}
+  - 语法: IN 累加器, {端口号 / DX}
 - `OUT`
   - I/O端口输出
-  - 语法: OUT {端口号│DX},累加器
+  - 语法: OUT {端口号/DX},累加器
 
 :::tip
 输入输出端口由立即方式指定时, 其范围是 0-255; 由寄存器 DX 指定时,其范围是 0-65535
@@ -160,15 +160,15 @@ draft: false
 - `STOS`
   - 保存串, 是LODS的逆过程
 - `REP`
-  - 当CX/ECX<>0时重复
+  - 当CX/ECX!=0时重复
 - `REPE/REPZ`
-  - 当ZF=1或比较结果相等,且CX/ECX<>0时重复
+  - 当ZF=1或比较结果相等,且CX/ECX != 0时重复
 - `REPNE/REPNZ`
-  - 当ZF=0或比较结果不相等,且CX/ECX<>0时重复
+  - 当ZF=0或比较结果不相等,且CX/ECX!=0时重复
 - `REPC`
-  - 当CF=1且CX/ECX<>0时重复
+  - 当CF=1且CX/ECX!=0时重复
 - `REPNC`
-  - 当CF=0且CX/ECX<>0时重复
+  - 当CF=0且CX/ECX!=0时重复
 
 # 程序转移指令
 
@@ -250,4 +250,4 @@ draft: false
 
 # 参考资料
 
-1. <app-link to="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html" class="sourceLink">X86汇编</app-link>
+1. [X86汇编](https://www.cs.virginia.edu/~evans/cs216/guides/x86.html)

@@ -15,8 +15,12 @@ const fontSans = Inter({
 
 // Font files can be colocated inside of `pages`
 const fontHeading = localFont({
-  src: "../assets/fonts/CalSans-SemiBold.woff2",
-  variable: "--font-heading",
+  src: [{
+   path: "../assets/fonts/Inter-Bold.ttf"
+  }, {
+    path: "../assets/fonts/Inter-Regular.ttf"
+  }],
+  variable: "--font-sans",
 })
 
 interface RootLayoutProps {
