@@ -2,60 +2,39 @@ import {
   AlertTriangle,
   ArrowRight,
   Check,
-  Copy,
   ChevronLeft,
   ChevronRight,
   Command,
-  CreditCard,
+  Copy,
+  ExternalLink,
   File,
   FileText,
-  HelpCircle,
-  Image,
   Laptop,
   Loader2,
   LucideProps,
   Moon,
-  CircleEllipsis,
-  Pizza,
-  Plus,
-  Settings,
   SunMedium,
-  Trash,
   Twitter,
-  User,
-  X,
   Undo2,
-  Heart,
-  BoomBox,
-  LayoutList,
-  MoveUpRight,
-  ExternalLink
+  X,
 } from "lucide-react"
-
 
 export const Icons = {
   logo: Command,
+  // posts icon
+  post: FileText,
+  sun: SunMedium,
+  moon: Moon,
+  laptop: Laptop,
   close: X,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
-  trash: Trash,
-  post: FileText,
   page: File,
-  media: Image,
-  settings: Settings,
-  billing: CreditCard,
-  ellipsis: CircleEllipsis,
-  add: Plus,
   warning: AlertTriangle,
-  user: User,
   arrowRight: ArrowRight,
-  help: HelpCircle,
-  pizza: Pizza,
-  sun: SunMedium,
-  moon: Moon,
-  laptop: Laptop,
-  back:Undo2,
+
+  back: Undo2,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
@@ -76,21 +55,12 @@ export const Icons = {
   twitter: Twitter,
   check: Check,
   copy: Copy,
-  Heart,
-  BoomBox,
-  LayoutList,
-  MoveUpRight,
   ExternalLink,
-  home:()=> (
-    <div className="i-carbon-home h-5 w-5"/>
-  ),
-  posts:()=> (
-    <div className="i-carbon-catalog h-5 w-5"/>
-  ),
+  home: () => <div className="i-carbon-home h-5 w-5" />,
+  posts: () => <div className="i-carbon-catalog h-5 w-5" />,
 }
 
-export function IconComponent({ name,className }) {
+export function IconComponent({ name, className }) {
   const Icon = Icons[name]
-  return <Icon className={className} strokeWidth={1.5}/>
+  return <Icon className={className} strokeWidth={1.5} />
 }
-

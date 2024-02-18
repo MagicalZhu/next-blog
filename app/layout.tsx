@@ -7,6 +7,9 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 
+import { SiteFooter } from "@/components/layout/site-footer"
+import { SiteHeader } from "@/components/layout/site-header"
+
 // set font
 const fontSans = Inter({
   subsets: ["latin"],
@@ -16,7 +19,7 @@ const fontSans = Inter({
 // Font files can be colocated inside of `pages`
 const fontHeading = localFont({
   src: [{
-   path: "../assets/fonts/Inter-Bold.ttf"
+    path: "../assets/fonts/Inter-Bold.ttf"
   }, {
     path: "../assets/fonts/Inter-Regular.ttf"
   }],
@@ -77,8 +80,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+
+        <ThemeProvider attribute="class"
+                      defaultTheme="system"
+                      enableSystem>
+          <div vaul-drawer-wrapper="">
+            <div className="relative flex min-h-screen flex-col bg-background">
+              <SiteHeader />
+              <main className="flex-1">
+                {children}
+              </main>
+              <SiteFooter />
+            </div>
+          </div>
           <Toaster />
           <TailwindIndicator />
         </ThemeProvider>

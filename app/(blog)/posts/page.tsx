@@ -45,7 +45,7 @@ export default function PostsPage() {
 
 
   return (
-    <>
+    <div className="slide-enter container flex-1 items-start md:grid md:gap-6 lg:gap-10">
       {Object.keys(postData)?.length ? (
         <main className="relative lg:gap-16 xl:grid xl:grid-cols-[1fr_200px]">
           <div className="space-y-8">
@@ -110,6 +110,6 @@ export default function PostsPage() {
       ) : (
         <p>No posts published.</p>
       )}
-    </>
+    </div>
   )
 }

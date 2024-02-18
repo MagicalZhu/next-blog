@@ -12,6 +12,7 @@ import { Metadata } from "next"
 import {  cn, formatDate } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface PostPageProps {
   params: {
@@ -66,8 +67,13 @@ export default async function PostPage({ params }: PostPageProps) {
 
   const toc = await getTableOfContents(page.body.raw)
   return (
-    <>
-      <main className="slide-enter relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
+    <div className="slide-enter max-w-[68vw] mx-auto flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+      <aside className="fixed top-14 z-30 -ml-2 hidden w-full shrink-0 md:sticky md:block">
+        <ScrollArea className="h-full py-6 pr-6 lg:py-8">
+          <TableOfContents toc={toc} />
+        </ScrollArea>
+      </aside>
+      <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
         <div  className="mx-auto w-full min-w-0">
           <div>
             <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
@@ -116,12 +122,7 @@ export default async function PostPage({ params }: PostPageProps) {
             </Link>
           </div>
         </div>
-        <div className="hidden text-sm xl:block">
-          <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
-            <TableOfContents toc={toc} />
-          </div>
-        </div>
       </main>
-    </>
+    </div>
   )
 }

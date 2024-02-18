@@ -29,7 +29,7 @@ const years = dayjs().diff(dayjs('2017-9-1'), 'year')
 export default async function IndexPage() {
 
   return (
-    <>
+    <div className="slide-enter pt-4 space-y-5">
       <section className="flex items-center gap-1 decoration-none border-none">
         <div>
           <p className="text-xl font-semibold">
@@ -135,6 +135,6 @@ export default async function IndexPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

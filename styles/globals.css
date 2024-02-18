@@ -81,17 +81,17 @@
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 7px;
   }
   ::-webkit-scrollbar:horizontal {
-    height: 6px;
+    height: 7px;
   }
   ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
     background: #fff;
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #eee;
+    background: hsl(0deg 0% 81.51%);
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {

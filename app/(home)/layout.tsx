@@ -13,11 +13,9 @@ export default async function HomeLayout({
 }: LayoutProps) {
   return (
     <>
-      <MainHeader/>
-      <main className="max-w-[98ch] mx-auto h-full flex-1 flex-col space-y-8 p-8 md:flex">
+      <div className="container relative">
         {children}
-      </main>
-      <SiteFooter/>
+      </div>
     </>
   )
 }

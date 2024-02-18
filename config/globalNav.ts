@@ -3,12 +3,7 @@ import { GlobalNavConfig } from "types"
 export const globalNavConfig: GlobalNavConfig = {
   mainNav: [
     {
-      title: "Home",
-      href: "/",
-      icon: "home"
-    },
-    {
-      title: "Blog",
+      title: "Posts",
       href: "/posts",
       icon: "posts"
     },
