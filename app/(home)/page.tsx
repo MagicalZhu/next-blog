@@ -111,7 +111,7 @@ export default async function IndexPage() {
               target="_blank"
               href="mailto:huakucha95@163.com"
             >
-              <span className="i-carbon-email-new"/>
+              <span className="i-radix-icons-envelope-closed"/>
               <p>Email</p>
             </a>
           </div>

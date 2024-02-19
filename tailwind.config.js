@@ -64,6 +64,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        inter: ["var(--font-inter-sans)", ...fontFamily.sans],
         heading: ["var(--font-heading)", ...fontFamily.sans],
       },
       keyframes: {
@@ -86,7 +87,7 @@ module.exports = {
     animate,
     typography,
     iconsPlugin({
-      collections: getIconCollections(["prime", "carbon","fluent-emoji"]),
+      collections: getIconCollections(["prime", "carbon","fluent-emoji", "radix-icons"]),
       scale: 1.2
     }),
   ],

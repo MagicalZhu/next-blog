@@ -20,6 +20,9 @@ dependencies:
   '@iconify-json/prime':
     specifier: ^1.1.10
     version: 1.1.10
+  '@iconify-json/radix-icons':
+    specifier: ^1.1.14
+    version: 1.1.14
   '@iconify-json/simple-icons':
     specifier: ^1.1.86
     version: 1.1.86
@@ -152,6 +155,9 @@ dependencies:
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
+  geist:
+    specifier: ^1.2.2
+    version: 1.2.2(next@13.3.2-canary.13)
   hash-obj:
     specifier: ^4.0.0
     version: 4.0.0
@@ -1232,6 +1238,12 @@ packages:
 
   /@iconify-json/prime@1.1.10:
     resolution: {integrity: sha512-H8ilVUZbnQ50ELWO88dZ9oBQI5VyGmpKE5mb7x/wFmSoIjmc7ZGJ4lFE+8kfo6NcFGDA9NMfJdm2wUa0IABSIA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/radix-icons@1.1.14:
+    resolution: {integrity: sha512-AYBOyhnJ2hXlg3aIn8Ekphrr7zHRyz1l8x6bidM3PDUuTL+aRt8r6cpCvN3GeuTHy2JOhmihbVJRF0bt2FF7Ag==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
@@ -4382,6 +4394,14 @@ packages:
   /functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
+
+  /geist@1.2.2(next@13.3.2-canary.13):
+    resolution: {integrity: sha512-uRDrxhvdnPwWJmh+K5+/5LXSKwvJzaYCl9tDXgiBi4hj7hB4K7+n/WLcvJMFs5btvyn0r9OSwCd1s6CmqAsxEw==}
+    peerDependencies:
+      next: '>=13.2.0 <15'
+    dependencies:
+      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.7.0)(react-dom@18.2.0)(react@18.2.0)
+    dev: false
 
   /gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}

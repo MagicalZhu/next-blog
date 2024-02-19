@@ -33,7 +33,7 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
-            <ModeToggle />
+            {/* <ModeToggle /> */}
           </nav>
         </div>
       </div>

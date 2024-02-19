@@ -1,3 +1,4 @@
+import {  cn } from "@/lib/utils"
 
 interface BlogsLayoutProperties {
   children: React.ReactNode

@@ -20,7 +20,8 @@ import {
   MoonIcon,
   LaptopIcon,
   VercelLogoIcon,
-  TextAlignJustifyIcon
+  TextAlignJustifyIcon,
+  ArrowUpIcon
 } from "@radix-ui/react-icons"
 
 export const Icons = {
@@ -60,6 +61,7 @@ export const Icons = {
   copy: Copy,
   ExternalLink,
   TextAlignJustifyIcon,
+  ArrowUpIcon,
   home: () => <div className="i-carbon-home h-5 w-5" />,
   posts: () => <div className="i-carbon-catalog h-5 w-5" />,
 }
