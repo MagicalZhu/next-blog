@@ -10,7 +10,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteHeader } from "@/components/layout/site-header"
 
-// set font
+
 const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -85,7 +85,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                       defaultTheme="system"
                       enableSystem>
           <div vaul-drawer-wrapper="">
-            <div className="relative flex min-h-screen flex-col bg-background">
+            <div className="relative flex min-h-screen flex-col bg-background space-y-3">
               <SiteHeader />
               <main className="flex-1">
                 {children}

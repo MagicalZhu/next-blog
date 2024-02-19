@@ -68,12 +68,12 @@ export default async function PostPage({ params }: PostPageProps) {
   const toc = await getTableOfContents(page.body.raw)
   return (
     <div className="slide-enter max-w-[68vw] mx-auto flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-      <aside className="fixed top-14 z-30 -ml-2 hidden w-full shrink-0 md:sticky md:block">
+      <aside className="fixed top-14 z-30 hidden w-full shrink-0 md:sticky md:block">
         <ScrollArea className="h-full py-6 pr-6 lg:py-8">
           <TableOfContents toc={toc} />
         </ScrollArea>
       </aside>
-      <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid xl:grid-cols-[1fr_200px]">
+      <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid">
         <div  className="mx-auto w-full min-w-0">
           <div>
             <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">

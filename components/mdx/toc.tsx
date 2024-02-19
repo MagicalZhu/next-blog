@@ -5,6 +5,7 @@ import * as React from "react"
 import { TableOfContents } from "@/lib/toc"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@/hooks/use-mounted"
+import { Icons } from "@/components/icons"
 
 interface TocProps {
   toc: TableOfContents
@@ -31,7 +32,7 @@ export function TableOfContents({ toc }: TocProps) {
 
   return mounted ? (
     <div className="space-y-2">
-      <p className="font-medium">On This Page</p>
+      <Icons.TextAlignJustifyIcon className="h-5 w-5"/>
       <Tree tree={toc} activeItem={activeHeading} />
     </div>
   ) : null

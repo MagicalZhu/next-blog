@@ -4,28 +4,32 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
-  Command,
   Copy,
   ExternalLink,
   File,
   FileText,
-  Laptop,
   Loader2,
   LucideProps,
-  Moon,
-  SunMedium,
   Twitter,
   Undo2,
   X,
 } from "lucide-react"
 
+import {
+  SunIcon,
+  MoonIcon,
+  LaptopIcon,
+  VercelLogoIcon,
+  TextAlignJustifyIcon
+} from "@radix-ui/react-icons"
+
 export const Icons = {
-  logo: Command,
+  logo: VercelLogoIcon,
   // posts icon
   post: FileText,
-  sun: SunMedium,
-  moon: Moon,
-  laptop: Laptop,
+  sun: SunIcon,
+  moon: MoonIcon,
+  laptop: LaptopIcon,
   close: X,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
@@ -33,7 +37,6 @@ export const Icons = {
   page: File,
   warning: AlertTriangle,
   arrowRight: ArrowRight,
-
   back: Undo2,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
@@ -56,6 +59,7 @@ export const Icons = {
   check: Check,
   copy: Copy,
   ExternalLink,
+  TextAlignJustifyIcon,
   home: () => <div className="i-carbon-home h-5 w-5" />,
   posts: () => <div className="i-carbon-catalog h-5 w-5" />,
 }

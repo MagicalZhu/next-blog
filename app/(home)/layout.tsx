@@ -1,5 +1,4 @@
 
-import { MainHeader } from "@/components/layout/header"
 import { SiteFooter } from "@/components/layout/site-footer"
 
 
