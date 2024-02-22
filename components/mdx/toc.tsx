@@ -6,6 +6,14 @@ import { TableOfContents } from "@/lib/toc"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@/hooks/use-mounted"
 import { Icons } from "@/components/icons"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import Link from "next/link"
+
+import { buttonVariants } from "@/components/ui/button"
 
 interface TocProps {
   toc: TableOfContents
@@ -32,7 +40,22 @@ export function TableOfContents({ toc }: TocProps) {
 
   return mounted ? (
     <div className="space-y-2">
-      <Icons.TextAlignJustifyIcon className="h-5 w-5"/>
+      <Tooltip delayDuration={0}>
+        <TooltipTrigger asChild>
+          <Link href="/posts"
+                className={cn(
+                buttonVariants({ variant: "link", size: "icon" }),
+                "h-9 w-9",
+              )}>
+            <Icons.back className="h-4 w-4" />
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent className="flex items-center gap-4 bg-black text-white">
+          Back
+        </TooltipContent>
+      </Tooltip>
+
+
       <Tree tree={toc} activeItem={activeHeading} />
     </div>
   ) : null

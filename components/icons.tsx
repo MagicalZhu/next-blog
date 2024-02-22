@@ -10,6 +10,7 @@ import {
   FileText,
   Loader2,
   LucideProps,
+  CornerLeftUp,
   Twitter,
   Undo2,
   X,
@@ -38,7 +39,7 @@ export const Icons = {
   page: File,
   warning: AlertTriangle,
   arrowRight: ArrowRight,
-  back: Undo2,
+  back: CornerLeftUp,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

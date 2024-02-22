@@ -12,7 +12,7 @@ import { Metadata } from "next"
 import {  cn, formatDate } from "@/lib/utils"
 import { buttonVariants,Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { ScrollBtn } from "@/components/layout/ScrollBtn"
+import { ScrollBtn } from "@/components/layout/scroll-btn"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface PostPageProps {
@@ -117,7 +117,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <article>
               <Mdx code={page.body.code} />
             </article>
-            <hr className="my-4" />
+            {/* <hr className="my-4" />
             <div className="flex justify-start py-6 lg:py-10">
               <Link
                 href="/posts"
@@ -126,7 +126,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <Icons.chevronLeft className="mr-2 h-4 w-4" />
                 cd ..
               </Link>
-            </div>
+            </div> */}
           </div>
         </main>
       </div>
