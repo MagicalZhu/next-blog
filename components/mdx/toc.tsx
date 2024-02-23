@@ -50,7 +50,7 @@ export function TableOfContents({ toc }: TocProps) {
             <Icons.back className="h-4 w-4" />
           </Link>
         </TooltipTrigger>
-        <TooltipContent className="flex items-center gap-4 bg-black text-white">
+        <TooltipContent className="flex items-center bg-black text-white">
           Back
         </TooltipContent>
       </Tooltip>

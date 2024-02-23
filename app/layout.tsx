@@ -90,7 +90,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                       defaultTheme="system"
                       enableSystem>
           <div vaul-drawer-wrapper="">
-            <div className="relative flex min-h-screen flex-col bg-background space-y-3">
+            <div className="relative flex min-h-screen flex-col bg-background">
               <SiteHeader />
               <main className="flex-1">
                 {children}

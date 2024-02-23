@@ -21,7 +21,7 @@ export function MainNav({ children, className }: MainNavProps) {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Icons.logo className="h-5 w-5" strokeWidth={1.5} />
+        <Icons.logo className="h-5 w-5" strokeWidth={1.5}/>
       </Link>
 
       {items?.length ? (

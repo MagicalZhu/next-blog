@@ -14,6 +14,7 @@ import { buttonVariants,Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ScrollBtn } from "@/components/layout/scroll-btn"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Badge } from "@/components/ui/badge"
 
 interface PostPageProps {
   params: {
@@ -87,15 +88,15 @@ export default async function PostPage({ params }: PostPageProps) {
               </h1>
               {page.authors?.length ? (
                 <div className="mt-6 flex space-x-4 pl-4">
-                  { page.authors ? (
+                  {/* page.authors ? (
                       <Link
                         href={`https://twitter.com/${page.authors}`}
                         className="flex items-center space-x-2 text-sm"
                       >
-                        <Avatar className="h-12 w-12">
-                          <AvatarImage src="/images/avatars/ant.png" />
-                          <AvatarFallback>{page.authors}</AvatarFallback>
-                        </Avatar>
+                          <Avatar className="h-12 w-12">
+                            <AvatarImage src="/images/avatars/ant.png" />
+                            <AvatarFallback>{page.authors}</AvatarFallback>
+                          </Avatar>
                         <div className="flex-1 text-left leading-tight">
                           <p className="font-medium">{page.authors}</p>
                           <p className="text-xs text-muted-foreground">
@@ -104,13 +105,24 @@ export default async function PostPage({ params }: PostPageProps) {
                         </div>
                       </Link>
                     ) : null
-                  }
+                  */}
                   {page.date && (
                     <time dateTime={page.date}
                           className="text-sm text-muted-foreground my-auto">
                       Published on {formatDate(page.date)}
                     </time>
                   )}
+                  {
+                    page.tags?.map((tag:string) => (
+                      <div className="flex items-center gap-2">
+                        <Badge key={tag}
+                              variant="secondary"
+                              className="rounded-md">
+                          <span className="text-black">{tag}</span>
+                        </Badge>
+                      </div>
+                    ))
+                  }
                 </div>
               ) : null}
             </div>

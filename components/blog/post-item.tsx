@@ -7,6 +7,7 @@ import type { Post } from "contentlayer/generated"
 import Link from "next/link"
 import { formatDate,cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface PostList {
   [keyName:number]:Post[]
@@ -58,47 +59,48 @@ export function PostItem() {
   }
 
   return (
-    <main className="relative lg:gap-16 xl:grid xl:grid-cols-[1fr_200px]">
-      <div className="space-y-8">
-        {
-          Object.keys(pageData)
-            .sort((a,b) => {  return parseInt(b) - parseInt(a) })
-            .map((year) => (
-              <>
-                <div className="relative pointer-events-none blogGroup">
-                  <span className="blogYear">
-                    {year}
-                  </span>
-                </div>
-                { pageData[year].map((post:Post) => (
-                  <Link
-                    href={post.slug}
-                    key={post._id}
-                    className="flex items-center"
-                  >
-                    <div className="ml-4 space-y-1">
-                      <p className="font-semibold leading-none">{post.title}</p>
-                      {post.description &&
-                        (
-                          <p className="text-sm text-muted-foreground">
-                            {post.description}
-                          </p>
-                        )
-                      }
+    <main className="relative py-6 md:grid md:grid-cols-[1fr_300px] md:gap-10 md:py-10">
+      <div>
+            {
+              Object.keys(pageData)
+                .sort((a,b) => {  return parseInt(b) - parseInt(a) })
+                .map((year) => (
+                  <>
+                    <div className="relative pointer-events-none blogGroup">
+                      <span className="blogYear">
+                        {year}
+                      </span>
                     </div>
-                    {post.date && (
-                      <div className="text-xs ml-auto text-muted-foreground">
-                        {formatDate(post.date)}
-                      </div>
-                    )}
-                  </Link>
-                ))}
-              </>
-            ))
-        }
+                    { pageData[year].map((post:Post) => (
+                      <Link
+                        href={post.slug}
+                        key={post._id}
+                        className="flex items-center pt-8"
+                      >
+                        <div className="ml-4 space-y-1">
+                          <p className="font-semibold leading-none">{post.title}</p>
+                          {post.description &&
+                            (
+                              <p className="text-sm text-muted-foreground">
+                                {post.description}
+                              </p>
+                            )
+                          }
+                        </div>
+                        {post.date && (
+                          <div className="text-xs ml-auto text-muted-foreground">
+                            {formatDate(post.date)}
+                          </div>
+                        )}
+                      </Link>
+                    ))}
+                  </>
+                ))
+            }
+
       </div>
-      <div className="hidden text-sm xl:block">
-        <div className="fixed top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto  float-right">
+      <div className="hidden text-sm md:block">
+        <div className="sticky top-16 -mt-10  overflow-y-auto pt-10 float-right">
           <span>分类:</span>
           <ul className="ml-6 list-disc">
             {
