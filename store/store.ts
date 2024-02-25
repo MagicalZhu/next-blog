@@ -11,15 +11,10 @@ const postPersistConfig = {
   whitelist: ["category"],
 }
 
-const persistPostReducer = combineReducers({
-  auth: persistReducer(postPersistConfig, postReducer),
-});
-
-
 
 export const store = configureStore({
   reducer: {
-    post: persistPostReducer
+    post: persistReducer(postPersistConfig, postReducer)
   }
 });
 

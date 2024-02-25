@@ -41,7 +41,6 @@ export function PostItem() {
 
   // const [keyword, setKeyword] = useState('')
   const dispatch = useAppDispatch()
-  console.log('--------:'+keyword)
 
   useEffect(() => {
     const postData:PostList = {}
