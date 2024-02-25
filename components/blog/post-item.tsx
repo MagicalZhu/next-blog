@@ -7,7 +7,9 @@ import type { Post } from "contentlayer/generated"
 import Link from "next/link"
 import { formatDate,cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
+
+import { useAppSelector, useAppDispatch } from '@/store/store'
+import { setCategory } from '@/store/posts/postSlice'
 
 interface PostList {
   [keyName:number]:Post[]
@@ -34,7 +36,12 @@ export function PostItem() {
     })
   })
 
-  const [keyword, setKeyWord] = useState('')
+
+  const keyword = useAppSelector((state) => state.post.category)
+
+  // const [keyword, setKeyword] = useState('')
+  const dispatch = useAppDispatch()
+  console.log('--------:'+keyword)
 
   useEffect(() => {
     const postData:PostList = {}
@@ -105,16 +112,16 @@ export function PostItem() {
           <ul className="ml-6 list-disc">
             {
               Object.keys(categoryData).map((tag,index) => (
-                <li className="marker:text-zinc-400"
-                    key={index}>
+                <li className="marker:text-zinc-400">
                   <Button variant="link"
+                          key={index}
                           className={cn(
                             "px-1",
                             (keyword === tag)
                               ? "underline decoration-wavy decoration-1 underline-offset-4 decoration-black  text-black"
                               : "hover:no-underline text-slate-400"
                           )}
-                          onClick={() => setKeyWord(tag)}
+                          onClick={() => dispatch(setCategory(tag))}
                     >
                       <span>{tag}</span>
                   </Button>

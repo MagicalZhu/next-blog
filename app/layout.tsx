@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
+import StoreProvider from "@/components/store-provider"
 
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteHeader } from "@/components/layout/site-header"
@@ -86,21 +87,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
 
-        <ThemeProvider attribute="class"
-                      defaultTheme="system"
-                      enableSystem>
-          <div vaul-drawer-wrapper="">
-            <div className="relative flex min-h-screen flex-col bg-background">
-              <SiteHeader />
-              <main className="flex-1">
-                {children}
-              </main>
-              <SiteFooter />
-            </div>
-          </div>
-          <Toaster />
-          <TailwindIndicator />
-        </ThemeProvider>
+          <ThemeProvider attribute="class"
+                        defaultTheme="system"
+                        enableSystem>
+            <StoreProvider>
+              <div vaul-drawer-wrapper="">
+                <div className="relative flex min-h-screen flex-col bg-background">
+                  <SiteHeader />
+                  <main className="flex-1">
+                    {children}
+                  </main>
+                  <SiteFooter />
+                </div>
+              </div>
+            </StoreProvider>
+            <Toaster />
+            <TailwindIndicator />
+          </ThemeProvider>
+
       </body>
     </html>
   )
