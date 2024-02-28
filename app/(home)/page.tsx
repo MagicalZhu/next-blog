@@ -40,7 +40,7 @@ export default async function IndexPage() {
       </section>
 
       <section>
-        <p className="pt-2 max-w-[75ch]">
+        <p className="pt-2">
           FE & BE developer with over { years } years of web experience.
           <br/>
           Outside of work I learning Spring Framework、Database and CloudNative...

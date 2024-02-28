@@ -2,12 +2,14 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 
 import { MainNavItem } from "types"
 import { cn } from "@/lib/utils"
 import { Icons, IconComponent } from "@/components/icons"
 import { globalNavConfig } from "@/config/globalNav"
+import { useAppDispatch } from '@/store/store'
+import { setCategory } from '@/store/posts/postSlice'
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -18,6 +20,14 @@ interface MainNavProps {
 export function MainNav({ children, className }: MainNavProps) {
   const pathName = usePathname()
   const items = globalNavConfig.mainNav
+  const dispatch = useAppDispatch()
+
+  React.useEffect(() => {
+    if (pathName === '/') {
+      dispatch(setCategory(''))
+    }
+  }, [pathName])
+
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">

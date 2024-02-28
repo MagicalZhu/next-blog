@@ -22,7 +22,8 @@ import {
   LaptopIcon,
   VercelLogoIcon,
   TextAlignJustifyIcon,
-  ArrowUpIcon
+  ArrowUpIcon,
+  ResetIcon
 } from "@radix-ui/react-icons"
 
 export const Icons = {
@@ -39,7 +40,7 @@ export const Icons = {
   page: File,
   warning: AlertTriangle,
   arrowRight: ArrowRight,
-  back: CornerLeftUp,
+  back: ResetIcon,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

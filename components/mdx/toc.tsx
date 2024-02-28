@@ -39,25 +39,17 @@ export function TableOfContents({ toc }: TocProps) {
   }
 
   return mounted ? (
-    <div className="space-y-2">
-      <Tooltip delayDuration={0}>
-        <TooltipTrigger asChild>
-          <Link href="/posts"
-                className={cn(
-                buttonVariants({ variant: "link", size: "icon" }),
-                "h-9 w-9",
-              )}>
-            <Icons.back className="h-4 w-4" />
-          </Link>
-        </TooltipTrigger>
-        <TooltipContent className="flex items-center bg-black text-white">
-          Back
-        </TooltipContent>
-      </Tooltip>
-
+    <>
+      <Link href="/posts"
+            className={cn(
+            buttonVariants({ variant: "link", size: "icon" }),
+            "h-9 w-9",
+          )}>
+        <Icons.back className="h-4 w-4" />
+      </Link>
 
       <Tree tree={toc} activeItem={activeHeading} />
-    </div>
+    </>
   ) : null
 }
 
