@@ -13,7 +13,7 @@ import {  cn, formatDate } from "@/lib/utils"
 import { buttonVariants,Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ScrollBtn } from "@/components/layout/scroll-btn"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
 
 interface PostPageProps {
@@ -71,7 +71,7 @@ export default async function PostPage({ params }: PostPageProps) {
   return (
     <>
       <div className={cn(
-        "slide-enter max-w-[75vw] mx-auto flex-1 items-start",
+        "slide-enter max-w-[85vw] mx-auto flex-1 items-start",
         "md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6",
         "lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
       )}>
@@ -87,43 +87,46 @@ export default async function PostPage({ params }: PostPageProps) {
                 {page.title}
               </h1>
               {page.authors?.length ? (
-                <div className="mt-6 flex space-x-4 pl-4">
-                  {/* page.authors ? (
-                      <Link
-                        href={`https://twitter.com/${page.authors}`}
-                        className="flex items-center space-x-2 text-sm"
-                      >
-                          <Avatar className="h-12 w-12">
-                            <AvatarImage src="/images/avatars/ant.png" />
-                            <AvatarFallback>{page.authors}</AvatarFallback>
-                          </Avatar>
-                        <div className="flex-1 text-left leading-tight">
-                          <p className="font-medium">{page.authors}</p>
-                          <p className="text-xs text-muted-foreground">
-                            @{page.authors}
-                          </p>
+                <ScrollArea className="whitespace-nowrap">
+                  <div className="mt-6 flex space-x-2 pl-4">
+                    {/* page.authors ? (
+                        <Link
+                          href={`https://twitter.com/${page.authors}`}
+                          className="flex items-center space-x-2 text-sm"
+                        >
+                            <Avatar className="h-12 w-12">
+                              <AvatarImage src="/images/avatars/ant.png" />
+                              <AvatarFallback>{page.authors}</AvatarFallback>
+                            </Avatar>
+                          <div className="flex-1 text-left leading-tight">
+                            <p className="font-medium">{page.authors}</p>
+                            <p className="text-xs text-muted-foreground">
+                              @{page.authors}
+                            </p>
+                          </div>
+                        </Link>
+                      ) : null
+                    */}
+                    {page.date && (
+                      <time dateTime={page.date}
+                            className="text-sm text-muted-foreground my-auto">
+                        {formatDate(page.date, true)}
+                      </time>
+                    )}
+                    {
+                      page.tags?.map((tag:string) => (
+                        <div className="flex items-center gap-1">
+                          <Badge key={tag}
+                                variant="secondary"
+                                className="rounded-md">
+                            <span className="text-black">{tag}</span>
+                          </Badge>
                         </div>
-                      </Link>
-                    ) : null
-                  */}
-                  {page.date && (
-                    <time dateTime={page.date}
-                          className="text-sm text-muted-foreground my-auto">
-                      Published on {formatDate(page.date)}
-                    </time>
-                  )}
-                  {
-                    page.tags?.map((tag:string) => (
-                      <div className="flex items-center gap-2">
-                        <Badge key={tag}
-                              variant="secondary"
-                              className="rounded-md">
-                          <span className="text-black">{tag}</span>
-                        </Badge>
-                      </div>
-                    ))
-                  }
-                </div>
+                      ))
+                    }
+                  </div>
+                  <ScrollBar orientation="horizontal" className="w-[1px]"/>
+                </ScrollArea>
               ) : null}
             </div>
             <article>
