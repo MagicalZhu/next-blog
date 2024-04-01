@@ -34,12 +34,6 @@ const mdx: MDXOptions = {
             node.children = [{ type: "text", value: " " }]
           }
         },
-        onVisitHighlightedLine(node) {
-          node.properties.className.push("line--highlighted")
-        },
-        onVisitHighlightedWord(node) {
-          node.properties.className = ["word--highlighted"]
-        },
       },
     ],
     () => (tree) => {
@@ -51,8 +45,8 @@ const mdx: MDXOptions = {
             node.properties["data-line-numbers"] = ""
           }
         }
-        if (node?.type === "element" && node?.tagName === "div") {
-          if (!("data-rehype-pretty-code-fragment" in node.properties)) {
+        if (node?.type === "element" && node?.tagName === "figure") {
+          if (!("data-rehype-pretty-code-figure" in node.properties)) {
             return
           }
           const preElement = node.children.at(-1)
