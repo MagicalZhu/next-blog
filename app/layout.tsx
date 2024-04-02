@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
 import localFont from "next/font/local"
 import { DM_Sans } from "next/font/google"
 import "@/styles/index.css"
@@ -13,12 +14,15 @@ import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteHeader } from "@/components/layout/site-header"
 
 
+const fontSans = GeistSans
 
+/*
 const fontSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-sans",
 })
+*/
 
 const interSans = Inter({
   subsets: ["latin"],

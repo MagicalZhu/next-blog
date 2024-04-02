@@ -25,7 +25,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-line] {
-  @apply px-4 min-h-[1rem] py-0.5 w-full inline-block;
+  @apply px-4 min-h-[1rem] py-0.5 w-full inline-block tracking-wide;
 }
 
 [data-rehype-pretty-code-figure] [data-line-numbers] [data-line] {
@@ -43,7 +43,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line] {
-  @apply bg-slate-800;
+  @apply bg-blue-900;
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line]span {

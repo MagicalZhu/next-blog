@@ -62,8 +62,8 @@ Spring 官方给出了[注解编程模型](https://github.com/spring-projects/sp
   @SpringBootConfiguration
   @EnableAutoConfiguration
   @ComponentScan(excludeFilters = {
-    @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
-    @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) }) {
+      @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
+      @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) }) {
     // ...
   }
   ```
@@ -81,8 +81,8 @@ Spring 官方给出了[注解编程模型](https://github.com/spring-projects/sp
 
   ```java
   public AnnotationConfigApplicationContext() {
-    this.reader = new AnnotatedBeanDefinitionReader(this);
-    this.scanner = new ClassPathBeanDefinitionScanner(this);
+      this.reader = new AnnotatedBeanDefinitionReader(this);
+      this.scanner = new ClassPathBeanDefinitionScanner(this);
   }
   ```
 
@@ -90,9 +90,9 @@ Spring 官方给出了[注解编程模型](https://github.com/spring-projects/sp
 
   ```java {3-4}
   public AnnotatedBeanDefinitionReader(BeanDefinitionRegistry registry, Environment environment) {
-    this.registry = registry;
-    this.conditionEvaluator = new ConditionEvaluator(registry, environment, null);
-    AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
+      this.registry = registry;
+      this.conditionEvaluator = new ConditionEvaluator(registry, environment, null);
+      AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
   }
   ```
 
