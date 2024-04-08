@@ -42,7 +42,7 @@ export function MainNav({ children, className }: MainNavProps) {
                 href={item.disabled ? "#" : item.href}
                 target={item.href.startsWith('https://') ? '_blank' : '_self'}
                 className={cn(
-                  "font-bold transition-colors hover:text-foreground/80",
+                  "font-medium transition-colors hover:text-foreground/80",
                   (pathName.startsWith(`${item.href}`) && pathName !== '/')
                     ? "text-black"
                     : "text-foreground/60",

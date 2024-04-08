@@ -6,12 +6,8 @@ import { TableOfContents } from "@/lib/toc"
 import { cn } from "@/lib/utils"
 import { useMounted } from "@/hooks/use-mounted"
 import { Icons } from "@/components/icons"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import Link from "next/link"
+import { Separator } from "@/components/ui/separator"
 
 import { buttonVariants } from "@/components/ui/button"
 
@@ -39,17 +35,19 @@ export function TableOfContents({ toc }: TocProps) {
   }
 
   return mounted ? (
-    <>
+    <div>
+      <Tree tree={toc} activeItem={activeHeading} />
+      <Separator className="my-4"/>
       <Link href="/posts"
             className={cn(
-            buttonVariants({ variant: "link", size: "icon" }),
-            "h-9 w-9",
-          )}>
-        <Icons.back className="h-4 w-4" />
+              buttonVariants({ variant: "link", size: "icon" }),
+              "h-6 w-full justify-start",
+              "hover:no-underline group"
+              )}>
+        <span className="mr-2 text-muted-foreground font-normal group-hover:text-black">Back to posts</span>
+        <Icons.back className="h-4 w-4 text-muted-foreground group-hover:text-black" strokeWidth={1}/>
       </Link>
-
-      <Tree tree={toc} activeItem={activeHeading} />
-    </>
+    </div>
   ) : null
 }
 
@@ -107,13 +105,13 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
     <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cn("mt-0 pt-2")}>
+          <li key={index} className={cn("mt-0 pt-1")}>
             <a
               href={item.url}
               className={cn(
                 "inline-block no-underline",
                 item.url === `#${activeItem}`
-                  ? "font-medium text-primary"
+                  ? "text-sm font-medium text-primary"
                   : "text-sm text-muted-foreground"
               )}
             >

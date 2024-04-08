@@ -3,6 +3,7 @@ import {
   ArrowRight,
   Check,
   ChevronLeft,
+  ArrowLeftCircleIcon,
   ChevronRight,
   Copy,
   ExternalLink,
@@ -10,9 +11,7 @@ import {
   FileText,
   Loader2,
   LucideProps,
-  CornerLeftUp,
   Twitter,
-  Undo2,
   X,
 } from "lucide-react"
 
@@ -23,7 +22,6 @@ import {
   VercelLogoIcon,
   TextAlignJustifyIcon,
   ArrowUpIcon,
-  ResetIcon
 } from "@radix-ui/react-icons"
 
 export const Icons = {
@@ -40,7 +38,7 @@ export const Icons = {
   page: File,
   warning: AlertTriangle,
   arrowRight: ArrowRight,
-  back: ResetIcon,
+  back: ArrowLeftCircleIcon,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

@@ -81,7 +81,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </ScrollArea>
         </aside>
         <main className="relative py-6 lg:gap-10 lg:py-10 xl:grid">
-          <div  className="mx-auto w-full min-w-0">
+          <div  className="w-[85%] min-w-0">
             <div>
               <h1 className="mt-2 inline-block font-heading text-4xl leading-tight lg:text-5xl">
                 {page.title}
@@ -132,16 +132,6 @@ export default async function PostPage({ params }: PostPageProps) {
             <article>
               <Mdx code={page.body.code} />
             </article>
-            {/* <hr className="my-4" />
-            <div className="flex justify-start py-6 lg:py-10">
-              <Link
-                href="/posts"
-                className={cn(buttonVariants({ variant: "link" }))}
-              >
-                <Icons.chevronLeft className="mr-2 h-4 w-4" />
-                cd ..
-              </Link>
-            </div> */}
           </div>
         </main>
       </div>
