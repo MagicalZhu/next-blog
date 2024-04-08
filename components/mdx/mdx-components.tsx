@@ -150,7 +150,7 @@ const components = {
       <>
         <pre
           className={cn(
-            "max-h-[650px] overflow-x-auto border bg-black py-4 ",
+            "max-h-[650px] overflow-x-auto bg-black py-4 ",
             className
           )}
           {...props}
@@ -168,7 +168,7 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-sans text-sm font-normal",
+        "relative rounded border px-[0.3rem] py-[0.2rem] font-sans font-normal",
         " text-black",
         className
       )}

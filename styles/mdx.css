@@ -15,7 +15,11 @@
 }
 
 [data-rehype-pretty-code-figure] {
-  @apply relative border mt-2 rounded-sm;
+  @apply relative border-4 mt-2 rounded-sm border-black;
+}
+
+[data-rehype-pretty-code-figure] pre{
+  background-color: #000 !important;
 }
 
 [data-rehype-pretty-code-figure] code {
@@ -43,7 +47,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line] {
-  @apply bg-blue-900;
+  background-color: rgb(58 68 90)
 }
 
 [data-rehype-pretty-code-figure] [data-highlighted-line]span {
@@ -55,7 +59,7 @@
 }
 
 .dark [data-rehype-pretty-code-figure] [data-highlighted-chars] {
-  @apply bg-zinc-900;
+  background-color: rgb(58 68 90)
 }
 
 [data-rehype-pretty-code-title] {

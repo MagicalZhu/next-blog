@@ -48,4 +48,8 @@
     font-weight: 900;
     opacity: 0.1;
   }
+
+  .mainContainer {
+    height: calc(theme('height.screen') - theme('height.14') - theme('height.16'))
+  }
 }
