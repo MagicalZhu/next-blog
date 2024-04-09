@@ -9,9 +9,11 @@ export default async function HomeLayout({
 }: LayoutProps) {
   return (
     <>
-      <div className="max-w-[78ch] mx-auto relative">
-        {children}
-      </div>
+      <main className="flex-1">
+        <div className="max-w-[78ch] mx-auto relative">
+          {children}
+        </div>
+      </main>
     </>
   )
 }

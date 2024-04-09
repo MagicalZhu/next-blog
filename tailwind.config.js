@@ -88,7 +88,7 @@ module.exports = {
     animate,
     typography,
     iconsPlugin({
-      collections: getIconCollections(["prime", "carbon","fluent-emoji", "radix-icons"]),
+      collections: getIconCollections(["prime", "carbon","fluent-emoji", "radix-icons", "simple-icons"]),
       scale: 1.2
     }),
   ],

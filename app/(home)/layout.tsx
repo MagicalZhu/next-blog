@@ -8,10 +8,10 @@ export default async function HomeLayout({
   children,
 }: LayoutProps) {
   return (
-    <>
-      <div className="max-w-[78ch] mx-auto relative w-full h-full">
+    <main className="flex flex-1">
+      <div className="max-w-[78ch] m-auto  relative w-full h-full">
         {children}
       </div>
-    </>
+    </main>
   )
 }

@@ -129,7 +129,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 </ScrollArea>
               ) : null}
             </div>
-            <article>
+            <article className="sm:tracking-wide tracking-[1px]">
               <Mdx code={page.body.code} />
             </article>
           </div>

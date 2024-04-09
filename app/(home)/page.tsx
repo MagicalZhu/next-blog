@@ -8,7 +8,7 @@ const years = dayjs().diff(dayjs('2017-9-1'), 'year')
 export default async function IndexPage() {
 
   return (
-    <div className="mt-[10rem]">
+    <>
       <div className="md:flex rounded-xl md:p-0">
         <Link href="/about"
                 className={cn(
@@ -50,23 +50,32 @@ export default async function IndexPage() {
               target="_blank"
               href="mailto:huakucha95@163.com"
             >
-              <span className="i-radix-icons-envelope-closed w-8 h-8"/>
+              <span className="i-simple-icons-gmail w-7 h-7 text-pink-600"/>
             </a>
+
             <a className="cursor-pointer hover:opacity-30"
               target="_blank"
-              href="https://github.com/MagicalZhu"
+              href={siteConfig.links.github}
             >
-              <span className="i-carbon-logo-github w-8 h-8"/>
+              <span className="i-carbon-logo-github w-7 h-7"/>
             </a>
+
             <a className="cursor-pointer hover:opacity-30"
               target="_blank"
               href="https://m.cmx.im/@athu"
             >
-              <span className="i-carbon-logo-mastodon w-8 h-8 text-indigo-600"/>
+              <span className="i-carbon-logo-mastodon w-7 h-7 text-indigo-600"/>
+            </a>
+
+            <a className="cursor-pointer hover:opacity-30"
+              target="_blank"
+              href={siteConfig.links.twitter}
+            >
+              <span className="i-simple-icons-x w-7 h-7 "/>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

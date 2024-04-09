@@ -11,7 +11,6 @@ import {
   FileText,
   Loader2,
   LucideProps,
-  Twitter,
   X,
 } from "lucide-react"
 
@@ -22,6 +21,8 @@ import {
   VercelLogoIcon,
   TextAlignJustifyIcon,
   ArrowUpIcon,
+  HamburgerMenuIcon,
+  MixIcon,
 } from "@radix-ui/react-icons"
 
 export const Icons = {
@@ -56,12 +57,13 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  twitter: Twitter,
   check: Check,
   copy: Copy,
   ExternalLink,
   TextAlignJustifyIcon,
   ArrowUpIcon,
+  HamburgerMenuIcon,
+  MixIcon,
   home: () => <div className="i-carbon-home h-5 w-5" />,
   posts: () => <div className="i-carbon-catalog h-5 w-5" />,
 }
