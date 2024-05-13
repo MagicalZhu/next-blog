@@ -112,15 +112,19 @@ public class Hello {
 
 依赖拉取是最常见的 IOC 类型。在依赖拉取的过程中,根据需要`从注册表中获取依赖项`,流程如下:
 
+```html
 <AppImg src="https://jsd.cdn.zzko.cn/gh/MagicalZhu/image-host@master/spring/%E4%BE%9D%E8%B5%96%E6%8B%89%E5%8F%96.webp"
         intro="依赖拉取"/>
+```
 
 ### 上下文依赖查找
 
 这种查找方式与 DL 相似,但是这种上下文依赖查找直接作用于容器,**而不是注册表**
 
+```html
 <AppImg src="https://jsd.cdn.zzko.cn/gh/MagicalZhu/image-host@master/spring/%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BE%9D%E8%B5%96%E6%9F%A5%E6%89%BE.webp"
         intro="上下文依赖查找"/>
+```
 
 我们可以看到**组件调用容器的查找方法查询依赖项,然后将依赖项设置到本身**
 

@@ -1,4 +1,4 @@
-import { makeSource } from "contentlayer/source-files"
+import { makeSource } from "contentlayer2/source-files"
 import mdx from './config/contentLayer/mdx';
 import Post from './config/contentLayer/posts';
 

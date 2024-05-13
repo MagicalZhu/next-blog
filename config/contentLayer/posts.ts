@@ -1,8 +1,9 @@
-import { defineDocumentType,
-  type ComputedFields
- } from "contentlayer/source-files"
+import {
+  type ComputedFields,
+  defineDocumentType,
+} from "contentlayer2/source-files";
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
+/** @type {import('contentlayer2/source-files').ComputedFields} */
 const computedFields:ComputedFields = {
   slug: {
     type: "string",
