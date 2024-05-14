@@ -71,7 +71,7 @@ function useActiveItem(itemIds: (string | undefined)[]) {
         return
       }
 
-      const element = document.getElementById(id)
+      const element = window.document.getElementById(id)
       if (element) {
         observer.observe(element)
       }
@@ -83,7 +83,7 @@ function useActiveItem(itemIds: (string | undefined)[]) {
           return
         }
 
-        const element = document.getElementById(id)
+        const element = window.document.getElementById(id)
         if (element) {
           observer.unobserve(element)
         }

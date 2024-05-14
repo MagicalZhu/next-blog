@@ -5,10 +5,10 @@ import { Icons } from "@/components/icons"
 import {  cn } from "@/lib/utils"
 
 import React from 'react';
-import { useScroll } from 'ahooks';
+import useScroll from "@/hooks/use-scroll";
 
 export function ScrollBtn() {
-  const scroll = useScroll(document);
+  const scrolled = useScroll(100);
   return (
     <Button
       variant="ghost"
@@ -16,7 +16,7 @@ export function ScrollBtn() {
       title="Scroll to top"
       className={cn(
         "sticky right-6 bottom-3 rounded-full float-right",
-        scroll?.top && scroll?.top > 100
+        scrolled
           ? "opacity-80"
           : "hidden"
       )}
