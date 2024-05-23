@@ -7,5 +7,10 @@ export const globalNavConfig: GlobalNavConfig = {
       href: "/posts",
       icon: "posts"
     },
+    {
+      title: "Editor",
+      href: "/editor",
+      icon: "posts"
+    },
   ],
 }
