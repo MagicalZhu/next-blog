@@ -10,6 +10,15 @@ import { globalNavConfig } from "@/config/globalNav"
 import { useAppDispatch } from '@/store/store'
 import { setCategory } from '@/store/posts/postSlice'
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 interface MainNavProps {
   items?: MainNavItem[]
   children?: React.ReactNode
@@ -60,9 +69,38 @@ export function MainNav({ children, className }: MainNavProps) {
           ) : null
         }
       </div>
-      <Link href="/about" className="hidden md:flex">
-        <Icons.MixIcon className="h-5 w-5" strokeWidth={1.5}/>
-      </Link>
+
+      <div className="hidden md:flex hover:cursor-pointer">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Icons.MixIcon className="h-5 w-5" strokeWidth={1.5}/>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent >
+            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuSeparator/>
+            <DropdownMenuItem>
+              <Icons.PersonStanding className="h-5 w-5" strokeWidth={1.5}/>
+              <Link href="/about" className="ml-2">
+                About
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Icons.PenSquare className="h-5 w-5" strokeWidth={1.5}/>
+              <Link href="/editor" className="ml-2">
+                NoteBook
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+
+      {
+        /*
+          <Link href="/about" className="hidden md:flex">
+            <Icons.MixIcon className="h-5 w-5" strokeWidth={1.5}/>
+          </Link>
+        */
+      }
     </>
   )
 }

@@ -11,6 +11,8 @@ import {
   FileText,
   Loader2,
   LucideProps,
+  PersonStanding,
+  PenSquare,
   X,
 } from "lucide-react"
 
@@ -64,6 +66,8 @@ export const Icons = {
   ArrowUpIcon,
   HamburgerMenuIcon,
   MixIcon,
+  PersonStanding,
+  PenSquare,
   home: () => <div className="i-carbon-home h-5 w-5" />,
   posts: () => <div className="i-carbon-catalog h-5 w-5" />,
 }
